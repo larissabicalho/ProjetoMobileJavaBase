@@ -20,7 +20,7 @@ public class HomeSteps {
     LoginScreen loginScreen;
     Scenario scenario;
 
-    @Given("acesso o app AWS")
+    @Given("acesso o app")
     public void xpto() throws IOException {
         //acessar app - Hooks faz isto.
     }
