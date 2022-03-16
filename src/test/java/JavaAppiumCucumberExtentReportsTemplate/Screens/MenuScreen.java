@@ -10,6 +10,11 @@ public class MenuScreen extends PageBase {
 
     By loginPageMenu = By.xpath("//android.widget.TextView[@text='Login Page']");
 
+    By homeMenu = By.xpath("//android.widget.TextView[@text='Home']");
+
+    By webMenu = By.xpath("//android.widget.TextView[@text='Web']");
+
+
     By NestedViewsMenu = By.xpath("//android.widget.TextView[@text='Nested Views']");
 
 
@@ -20,6 +25,14 @@ public class MenuScreen extends PageBase {
 
     public void clicarMenuLoginPage(){
         click(loginPageMenu);
+    }
+
+    public void clicarMenuHome(){
+        click(homeMenu);
+    }
+
+    public void clicarMenuWeb(){
+        click(webMenu);
     }
 
     public void clicarMenuNestedViews(){

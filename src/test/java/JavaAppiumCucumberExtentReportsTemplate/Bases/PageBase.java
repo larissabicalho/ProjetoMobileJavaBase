@@ -3,6 +3,7 @@ package JavaAppiumCucumberExtentReportsTemplate.Bases;
 import JavaAppiumCucumberExtentReportsTemplate.Hooks.Hooks;
 import JavaAppiumCucumberExtentReportsTemplate.Utils.DriverFactory;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
@@ -31,10 +32,27 @@ public class PageBase {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
+    public void clickNoSpinner(String visibleText) {
+
+        String scrollElement = "new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().text(\"Progress Bar\").instance(0))";
+
+        driver.findElement(MobileBy.AndroidUIAutomator(scrollElement)).click();
+    }
+
+    public void selectDate(String mudarData) {
+        //09 março 2022
+        driver.findElementByAccessibilityId(mudarData);
+    }
+
+    public void timePicker(String numero1, String numero2) {
+        driver.findElementByAccessibilityId(numero1).click();
+        driver.findElementByAccessibilityId(numero2).click();
+    }
     protected void click(MobileElement element){
         waitForElement(element);
         element.click();
     }
+
 
     protected void sendKeys(MobileElement element, String text){
         waitForElement(element);
@@ -146,6 +164,10 @@ public class PageBase {
 
     protected void click(By locator){
         waitForElement(locator).click();
+    }
+
+    protected void clear(By locator){
+        waitForElement(locator).clear();
     }
 
     protected void sendKeys(By locator, String text){

@@ -5,31 +5,21 @@ import org.openqa.selenium.By;
 
 public class LoginScreen extends PageBase {
 
-    By usernameInput = By.id("com.amazonaws.devicefarm.android.referenceapp:id/username_text_input");
+    By usernameField = By.name("username");
+    By passwordField = By.name("password");
+    By loginButton = By.xpath("//input[@type='submit']");
 
-    By passwordInput = By.id("com.amazonaws.devicefarm.android.referenceapp:id/password_text_input");
-
-    By loginButton = By.id("com.amazonaws.devicefarm.android.referenceapp:id/login_button");
-
-    By wrongLoginMessage = By.id("com.amazonaws.devicefarm.android.referenceapp:id/login_alt_message_textView");
-
-
-    public void fillRandomUsername(){
-        String username = "username " + Math.random();
-        sendKeys(usernameInput, username);
+    //Actions
+    public void preencherUsuario(String usuario) {
+        sendKeys(usernameField, usuario);
     }
 
-    public void fillRandomPasword(){
-        String password = "passwordInput " + Math.random();
-        sendKeys(passwordInput, password);
+    public void preencherSenha(String senha) {
+        sendKeys(passwordField, senha);
     }
 
-    public void clickLoginButton(){
+    public void clicarEmLogin() {
         click(loginButton);
-    }
-
-    public String returnWrongLoginMessage(){
-        return getText(wrongLoginMessage);
     }
 
 
