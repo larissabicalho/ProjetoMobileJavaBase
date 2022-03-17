@@ -16,13 +16,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+import static JavaAppiumCucumberExtentReportsTemplate.Utils.DriverFactory.getDriver;
+
 public class PageBase {
 
     private AppiumDriver driver = null;
     private WebDriverWait wait = null;
 
     public PageBase(){
-        driver = DriverFactory.getDriver();
+        driver = getDriver();
         wait = new WebDriverWait (driver, 90);
     } //fim construtor
 
@@ -31,6 +33,18 @@ public class PageBase {
         wait.until(ExpectedConditions.visibilityOf(element));
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
+
+    protected void scrollUsingTouchActions(int startX,int startY, int endX, int endY, int seconds) {
+        TouchAction actions = new TouchAction(driver);
+        actions.press(PointOption.point(startX,startY))
+                .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(seconds)))
+                .moveTo(PointOption.point(endX,endY)).release().perform();
+    }
+
+    public void esconderTeclado(){
+        getDriver().hideKeyboard();
+    }
+
 
     public void clickNoSpinner(String visibleText) {
 

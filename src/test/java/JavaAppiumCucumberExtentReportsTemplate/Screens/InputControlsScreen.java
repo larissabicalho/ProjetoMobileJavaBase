@@ -1,7 +1,11 @@
 package JavaAppiumCucumberExtentReportsTemplate.Screens;
 
 import JavaAppiumCucumberExtentReportsTemplate.Bases.PageBase;
+import JavaAppiumCucumberExtentReportsTemplate.Bases.ReadToastMessage;
+import net.sourceforge.tess4j.TesseractException;
 import org.openqa.selenium.By;
+
+import java.io.IOException;
 
 public class InputControlsScreen  extends PageBase {
     By checkBoxClick = By.xpath("//android.widget.TextView[@text='Checkbox']");
@@ -21,6 +25,8 @@ public class InputControlsScreen  extends PageBase {
     By verificarDate = By.xpath("//android.widget.TextView[@content-desc='Datepicker Display']");
     By submitClick = By.xpath("//android.widget.TextView[@text='Submit Button']");
     By gesturesClick = By.xpath("//android.widget.TextView[@text='Gestures']");
+
+    ReadToastMessage readToastMessage;
 
 
     public void elementoCheckbox(){
@@ -88,9 +94,12 @@ public class InputControlsScreen  extends PageBase {
        return getText(verificarDate);
     }
 
-    public void elementoSubmit(){
+    public String elementoSubmit() throws TesseractException, IOException {
         swipeElementWithDirection(submitClick,"RIGHT");
+        readToastMessage = new ReadToastMessage();
         click(submitClick);
+        String result = readToastMessage.readToastMessage();
+            return result;
     }
 
     public void elementoGestures(){
