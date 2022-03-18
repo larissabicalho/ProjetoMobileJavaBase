@@ -10,6 +10,6 @@ import io.cucumber.testng.CucumberOptions;
         glue = {"JavaAppiumCucumberExtentReportsTemplate/StepDefinitions/","JavaAppiumCucumberExtentReportsTemplate.Hooks"}
 
 )
-public class AppiumRunner extends AbstractTestNGCucumberTests {
+public class WebTests extends AbstractTestNGCucumberTests {
 
 }

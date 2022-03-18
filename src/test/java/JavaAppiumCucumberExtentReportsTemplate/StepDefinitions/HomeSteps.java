@@ -37,5 +37,11 @@ public class HomeSteps {
         Assert.assertEquals(homeScreen.validarTextoHome(), "AWS Device Farm Sample App for Android");
     }
 
+    @Then ("A mensagem da home inválida")
+    public void xpto3(){
+        homeScreen = new HomeScreen();
+        Assert.assertNotEquals(homeScreen.validarTextoHome(), "AWS Device");
+    }
+
 
 }
