@@ -6,10 +6,10 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(plugin = {
         "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" },
-        features = "src/test/resources/features/Web.feature",
+        features = "src/test/resources/features/Native.feature",
         glue = {"JavaAppiumCucumberExtentReportsTemplate/StepDefinitions/","JavaAppiumCucumberExtentReportsTemplate.Hooks"}
 
 )
-public class WebTests extends AbstractTestNGCucumberTests {
+public class NativeTests extends AbstractTestNGCucumberTests {
 
 }

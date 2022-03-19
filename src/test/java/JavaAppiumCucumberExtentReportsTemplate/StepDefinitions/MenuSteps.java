@@ -34,6 +34,13 @@ public class MenuSteps {
         getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
     }
 
+    @And("clicar no menu Native")
+    public void xpto6(){
+        menuScreen = new MenuScreen();
+        menuScreen.clicarMenuNative();
+        getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
+    }
+
     public void xpt5() {
         String s = null;
 // String s1;

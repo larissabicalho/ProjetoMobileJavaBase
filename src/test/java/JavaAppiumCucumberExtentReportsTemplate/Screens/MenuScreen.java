@@ -14,6 +14,8 @@ public class MenuScreen extends PageBase {
 
     By webMenu = By.xpath("//android.widget.TextView[@text='Web']");
 
+    By nativeMenu = By.xpath("//android.widget.TextView[@text='Native Components']");
+
 
     By NestedViewsMenu = By.xpath("//android.widget.TextView[@text='Nested Views']");
 
@@ -34,6 +36,11 @@ public class MenuScreen extends PageBase {
     public void clicarMenuWeb(){
         click(webMenu);
     }
+
+    public void clicarMenuNative(){
+        click(nativeMenu);
+    }
+
 
     public void clicarMenuNestedViews(){
         click(NestedViewsMenu);

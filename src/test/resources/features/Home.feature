@@ -1,13 +1,12 @@
-Feature: Acessar app
-Background:
+Feature: Home App
 
   @app
-  Scenario: Acessar app
+  Scenario: Acessa Home
     When clicar no menu lateral
     And clicar no menu Home
     Then valido frase Home
 
-  Scenario: Acessar app
+  Scenario: Acessar Home Texto Inválido
     When clicar no menu lateral
     And clicar no menu Home
     Then valido frase Home

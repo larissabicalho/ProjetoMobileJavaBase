@@ -1,10 +1,12 @@
 Feature: Acessar app
-Background:
-
-  Given acesso o app
-
   @app
-  Scenario: Acessar app
+  Scenario Outline: Verificar Se Acessou o Google
     When clicar no menu lateral
     And clicar no menu Web
-    Then valido frase Home
+    And entrar no site
+    And selecionar o site <web>
+    Then valido o site
+
+    Examples:
+    |web|
+    |https://www.google.com.br|

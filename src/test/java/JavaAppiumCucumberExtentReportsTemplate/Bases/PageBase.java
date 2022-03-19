@@ -1,12 +1,13 @@
 package JavaAppiumCucumberExtentReportsTemplate.Bases;
 
-import JavaAppiumCucumberExtentReportsTemplate.Hooks.Hooks;
-import JavaAppiumCucumberExtentReportsTemplate.Utils.DriverFactory;
+
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
-import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.*;
@@ -15,6 +16,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.HashMap;
 
 import static JavaAppiumCucumberExtentReportsTemplate.Utils.DriverFactory.getDriver;
 
@@ -22,10 +24,12 @@ public class PageBase {
 
     private AppiumDriver driver = null;
     private WebDriverWait wait = null;
+    protected JavascriptExecutor javaScriptExecutor = null;
 
     public PageBase(){
         driver = getDriver();
         wait = new WebDriverWait (driver, 90);
+        javaScriptExecutor = (JavascriptExecutor)driver;
     } //fim construtor
 
     //mobile elements
@@ -35,10 +39,30 @@ public class PageBase {
     }
 
     protected void scrollUsingTouchActions(int startX,int startY, int endX, int endY, int seconds) {
+        Dimension size = driver.manage().window().getSize();
+        int startx = (int) (size.width/2);
+        int endx = (int) (size.width);
+
+        int starty = (int) (size.height * 0.90);
+        int endy = (int) (size.height * 0.10);
+        System.out.println(starty);
+        System.out.println(endy);
         TouchAction actions = new TouchAction(driver);
-        actions.press(PointOption.point(startX,startY))
-                .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(seconds)))
-                .moveTo(PointOption.point(endX,endY)).release().perform();
+        actions.press(PointOption.point(startx, starty))
+                .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(seconds)))// Start at 100,100
+                .moveTo(PointOption.point(endx,endy)).release().perform(); // Passing absolute values of 200,200 ending up at 200,200
+
+       // action.press(x, y).moveTo(x, y).release().perform()
+    //    actions.press(PointOption.point(startX,startY))
+      //          .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(seconds)))
+        //        .moveTo(PointOption.point(endX,endY)).release().perform();*/
+    }
+
+    protected void finalContentScrolling(String elementText){
+        driver.findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(true).instance(0))" +
+                        ".setSwipeDeadZonePercentage(50).scrollIntoView(new UiSelector()" +
+                        ".textMatches(\"" + elementText + "\").instance(0))"));
     }
 
     public void esconderTeclado(){
@@ -85,7 +109,7 @@ public class PageBase {
         MobileElement element = waitForElement(locator);
 
         String action = "";
-        double endXPercen = 0.9;
+        double endXPercen = 0.025;
         int startX, startY, endX, endY;
 
         //Coleta a largura da tela
@@ -188,6 +212,9 @@ public class PageBase {
         waitForElement(locator).sendKeys(text);
     }
 
+    protected  void clicarEmEnter() {
+        ((AndroidDriver)driver).getKeyboard().pressKey(Keys.ENTER);
+    }
     protected String getText(By locator){
         String text = waitForElement(locator).getText();
         return text;
@@ -204,5 +231,7 @@ public class PageBase {
         wait.until(ExpectedConditions.visibilityOf(element));
         return element;
     }
+
+
 
 }//fim classe

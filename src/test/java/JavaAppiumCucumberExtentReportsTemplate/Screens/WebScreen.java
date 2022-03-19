@@ -21,13 +21,16 @@ public class WebScreen extends PageBase {
 
     public void preencherSite(String site){
         sendKeys(textoSite, site);
-        sendKeys(textoSite, String.valueOf(Keys.ENTER));
+
     }
 
     public String validarMensagemGoogle(){
         return getText(validarGoogle);
     }
 
+    public void clicarNoEnterParaSite(){
+        clicarEmEnter();
+    }
 
 
 }
