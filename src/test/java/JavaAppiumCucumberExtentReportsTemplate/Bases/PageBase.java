@@ -38,31 +38,16 @@ public class PageBase {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    protected void scrollUsingTouchActions(int startX,int startY, int endX, int endY, int seconds) {
+    protected void scrollUsingTouchActions(int seconds) {
         Dimension size = driver.manage().window().getSize();
         int startx = (int) (size.width/2);
-        int endx = (int) (size.width);
 
         int starty = (int) (size.height * 0.90);
         int endy = (int) (size.height * 0.10);
-        System.out.println(starty);
-        System.out.println(endy);
         TouchAction actions = new TouchAction(driver);
         actions.press(PointOption.point(startx, starty))
                 .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(seconds)))// Start at 100,100
-                .moveTo(PointOption.point(endx,endy)).release().perform(); // Passing absolute values of 200,200 ending up at 200,200
-
-       // action.press(x, y).moveTo(x, y).release().perform()
-    //    actions.press(PointOption.point(startX,startY))
-      //          .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(seconds)))
-        //        .moveTo(PointOption.point(endX,endY)).release().perform();*/
-    }
-
-    protected void finalContentScrolling(String elementText){
-        driver.findElement(MobileBy.AndroidUIAutomator(
-                "new UiScrollable(new UiSelector().scrollable(true).instance(0))" +
-                        ".setSwipeDeadZonePercentage(50).scrollIntoView(new UiSelector()" +
-                        ".textMatches(\"" + elementText + "\").instance(0))"));
+                .moveTo(PointOption.point(startx,endy)).release().perform(); // Passing absolute values of 200,200 ending up at 200,200
     }
 
     public void esconderTeclado(){

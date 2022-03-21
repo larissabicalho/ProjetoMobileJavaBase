@@ -1,13 +1,12 @@
 package JavaAppiumCucumberExtentReportsTemplate.Screens.Native;
 
 import JavaAppiumCucumberExtentReportsTemplate.Bases.PageBase;
-import io.appium.java_client.MobileElement;
-import io.cucumber.java8.Th;
 import org.openqa.selenium.By;
 
 public class ContentScrollingScreen extends PageBase {
 
     By menuScrolling = By.xpath("//android.widget.TextView[@text='Content Scrolling']");
+    By textoScrolling = By.className("android.widget.ScrollView");
 
     public void clicarMenuScrooling(){
         waitForElement(menuScrolling);
@@ -15,10 +14,15 @@ public class ContentScrollingScreen extends PageBase {
 
     }
 
-    public void scroolAteFinalDoTexto(){
+    public void scroolAteFinalDoTexto(String qtLoop){
         waitForElement(menuScrolling);
-        scrollUsingTouchActions(33,201,447,800,5);
+        for(int i =0; i < Integer.parseInt(qtLoop); i ++) {
+            scrollUsingTouchActions(1);
+        }
+    }
 
+    public Boolean verificarSeOTextoAparece(){
+       return returnElementDisplayed(textoScrolling);
     }
 
 }
