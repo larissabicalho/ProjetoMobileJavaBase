@@ -7,6 +7,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.testng.Assert;
 
 import static JavaAppiumCucumberExtentReportsTemplate.Hooks.Hooks.getScenario;
 
@@ -27,12 +28,14 @@ public class WebSteps {
         webScreen = new WebScreen();
         webScreen.preencherSite(site);
         webScreen.clicarNoEnterParaSite();
+        getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
     }
 
     @Then("valido o site")
     public void validarOSite(){
         webScreen = new WebScreen();
-        webScreen.validarMensagemGoogle();
+        Assert.assertEquals(webScreen.validarMensagemGoogle(), "Google");
+        getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
     }
 
 }

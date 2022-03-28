@@ -32,7 +32,7 @@ public class DriverFactory {
         }
         else {
             caps.setCapability("platformName", "Android");
-            caps.setCapability("platformVersion", "9");
+            caps.setCapability("platformVersion", "9.0");
             caps.setCapability("deviceName", "Pixel_2_API_28");
             caps.setCapability("app", System.getProperty("user.dir") + "\\src\\test\\resources\\app\\appSample.apk");
 

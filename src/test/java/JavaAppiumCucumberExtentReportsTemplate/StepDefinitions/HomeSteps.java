@@ -28,7 +28,7 @@ public class HomeSteps {
     public void xpto1(){
         homeScreen = new HomeScreen();
         homeScreen.clicarMenu();
-        getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
+     //   getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
     }
 
     @Then ("valido frase Home")

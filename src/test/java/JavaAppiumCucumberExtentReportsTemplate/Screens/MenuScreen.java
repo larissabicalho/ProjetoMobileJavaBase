@@ -17,7 +17,11 @@ public class MenuScreen extends PageBase {
     By nativeMenu = By.xpath("//android.widget.TextView[@text='Native Components']");
 
 
-    By NestedViewsMenu = By.xpath("//android.widget.TextView[@text='Nested Views']");
+    By nestedViewsMenu = By.xpath("//android.widget.TextView[@text='Nested Views']");
+
+    By crashBugMenu = By.xpath("//android.widget.TextView[@text='Crash/Bug']");
+
+    By alertsMenu = By.xpath("//android.widget.TextView[@text='Alerts']");
 
 
     public void clicarMenuInputControl(){
@@ -27,6 +31,10 @@ public class MenuScreen extends PageBase {
 
     public void clicarMenuLoginPage(){
         click(loginPageMenu);
+    }
+
+    public void clicarMenuAlerts(){
+        click(alertsMenu);
     }
 
     public void clicarMenuHome(){
@@ -41,9 +49,12 @@ public class MenuScreen extends PageBase {
         click(nativeMenu);
     }
 
-
     public void clicarMenuNestedViews(){
-        click(NestedViewsMenu);
+        click(nestedViewsMenu);
+    }
+
+    public void clicarMenuCrash(){
+        click(crashBugMenu);
     }
 
 

@@ -9,8 +9,12 @@ public class SpinnerScreen extends PageBase {
     By verificarOption = By.xpath("//android.widget.TextView[@content-desc='Spinner Display']");
 
     public void elementoSpinner(){
-        swipeElementWithDirection(spinnerClick,"RIGHT");
+        while(!returnElementDisplayedElement(spinnerClick)){
+            scrollUsingTouchActionsOnlyY(2);
+        }
         click(spinnerClick);
+
+
     }
 
     public void clicarNoSpinner(String option)

@@ -10,7 +10,9 @@ public class ToggleButtonScreen extends PageBase {
 
 
     public void elementoToggle(){
-        swipeElementWithDirection(toggleClick,"RIGHT");
+        while(!returnElementDisplayedElement(toggleClick)){
+            scrollUsingTouchActionsOnlyY(2);
+        }
         click(toggleClick);
     }
 

@@ -41,26 +41,14 @@ public class MenuSteps {
         getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
     }
 
-    public void xpt5() {
-        String s = null;
-// String s1;
-// String s2;
-// String s3;
-
-        Format formatter;
-        Date date = new Date();
-        DateFormat df = new SimpleDateFormat("MMMM");
-        Locale BRAZIL = new Locale("pt", "BR");
-
-        df = DateFormat.getDateInstance(DateFormat.FULL, BRAZIL);
-
-        s = df.format(date); // January
-
-        System.out.println("Month : " + s);
-
-
-        System.out.println(date);
+    @And("clicar no menu Nested Views")
+    public void xpto8(){
+        menuScreen = new MenuScreen();
+        menuScreen.clicarMenuNestedViews();
+        getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
     }
+
+
     @And("clicar no menu Web")
     public void xpto4(){
         menuScreen = new MenuScreen();
@@ -68,6 +56,27 @@ public class MenuSteps {
         getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
     }
 
+    @And("clicar no menu Input")
+    public void xpto7(){
+        menuScreen = new MenuScreen();
+        menuScreen.clicarMenuInputControl();
+        getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
+    }
+
+
+    @And("clicar no menu Crash/Bug")
+    public void xpto9(){
+        menuScreen = new MenuScreen();
+        menuScreen.clicarMenuCrash();
+       getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
+    }
+
+    @And("clicar no menu Alerts")
+    public void xpto10(){
+        menuScreen = new MenuScreen();
+        menuScreen.clicarMenuAlerts();
+        getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
+    }
     @Then("verificar mensagem de texto")
     public void xpto3(){
         System.out.println("finalizando");

@@ -9,15 +9,16 @@ public class ContentScrollingScreen extends PageBase {
     By textoScrolling = By.className("android.widget.ScrollView");
 
     public void clicarMenuScrooling(){
-        waitForElement(menuScrolling);
+        while(!returnElementDisplayedElement(menuScrolling)){
+            scrollUsingTouchActionsOnlyY(2);
+        }
         click(menuScrolling);
 
     }
 
     public void scroolAteFinalDoTexto(String qtLoop){
-        waitForElement(menuScrolling);
         for(int i =0; i < Integer.parseInt(qtLoop); i ++) {
-            scrollUsingTouchActions(1);
+            topToBottonSwipe2();
         }
     }
 

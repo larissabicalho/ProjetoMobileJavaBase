@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="JavaAppiumCucumberExtentReportsTemplate" />
         <module name="javaappiumcucumberextentreportstemplate-master" />
+        <module name="ProjetoMobileJavaBase" />
       </profile>
     </annotationProcessing>
   </component>

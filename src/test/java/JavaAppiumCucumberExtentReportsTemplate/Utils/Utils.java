@@ -16,6 +16,8 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 
+import static JavaAppiumCucumberExtentReportsTemplate.Utils.DriverFactory.driver;
+
 public class Utils {
 
     String screenshotdir = System.getProperty("user.dir") + "/test-output/Screenshots/";
@@ -99,6 +101,26 @@ public class Utils {
         return filePathAndName;
     }
 
+    public static String takeScreenShot() {
+
+        String scrShotDir = "screenshots";
+        File scrShotDirPath = new File(Utils.returnPathProject()+"\\"+scrShotDir+"\\");
+        String destFile;
+
+        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy__hh_mm_ssaa");
+        new File(scrShotDir).mkdirs();
+        destFile = dateFormat.format(new Date()) + ".png";
+        try {
+            FileUtils.copyFile(scrFile, new File(scrShotDir + "/" + destFile));
+        } catch (IOException e) {
+            System.out.println("Image not transfered to screenshot folder");
+            e.printStackTrace();
+        }
+        return destFile;
+    }
+
     public static String getBase64Screenshot_AppiumDriver() throws IOException {
         String Base64StringofScreenshot="";
         File src = ((TakesScreenshot) DriverFactory.getDriver()).getScreenshotAs(OutputType.FILE);
@@ -116,6 +138,13 @@ public class Utils {
     public void cleanDirectoryReport() throws Throwable {
         if ((new File(screenshotdir)).exists())
             FileUtils.cleanDirectory(new File(screenshotdir));
+    }
+
+    public static String colocarPM(String str)
+    {
+        int numero = Integer.parseInt(str) + 12;
+        //System.out.println(numero);
+         return Integer.toString(numero);
     }
 
 
