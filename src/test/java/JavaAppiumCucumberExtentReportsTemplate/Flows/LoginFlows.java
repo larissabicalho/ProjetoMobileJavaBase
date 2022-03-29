@@ -1,7 +1,7 @@
 package JavaAppiumCucumberExtentReportsTemplate.Flows;
 
-import JavaAppiumCucumberExtentReportsTemplate.Screens.LoginScreen;
 
+import JavaAppiumCucumberExtentReportsTemplate.Screens.LoginScreen;
 
 
 public class LoginFlows {
@@ -14,9 +14,8 @@ public class LoginFlows {
 
     //Flows
     public void efetuarLogin(String username, String password){
-       loginScreen.preencherUsuario(username);
-       loginScreen.clicarEmLogin();
-       loginScreen.preencherSenha(password);
-       loginScreen.clicarEmLogin();
+        loginScreen.preencherUsuario(username);
+        loginScreen.preencherSenha(password);
+        loginScreen.clicarEmLogin();
     }
 }

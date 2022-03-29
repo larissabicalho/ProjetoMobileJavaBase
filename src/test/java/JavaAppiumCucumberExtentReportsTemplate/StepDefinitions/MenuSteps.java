@@ -56,6 +56,13 @@ public class MenuSteps {
         getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
     }
 
+    @And("clicar no menu Login")
+    public void xpto11(){
+        menuScreen = new MenuScreen();
+        menuScreen.clicarMenuLoginPage();
+        getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
+    }
+
     @And("clicar no menu Input")
     public void xpto7(){
         menuScreen = new MenuScreen();
@@ -77,6 +84,28 @@ public class MenuSteps {
         menuScreen.clicarMenuAlerts();
         getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
     }
+
+    @And("clicar no menu LocalWebView")
+    public void xpto12(){
+        menuScreen = new MenuScreen();
+        menuScreen.clicarMenuLocalWeb();
+        getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
+    }
+
+    @And("clicar no menu Fixtures")
+    public void xpto13(){
+        menuScreen = new MenuScreen();
+        menuScreen.clicarMenuFixtures();
+        getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
+    }
+
+    @And("clicar no menu Fixtures Blu")
+    public void xpto14(){
+        menuScreen = new MenuScreen();
+        menuScreen.clicarMenuFixturesBlu();
+        getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
+    }
+
     @Then("verificar mensagem de texto")
     public void xpto3(){
         System.out.println("finalizando");

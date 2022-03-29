@@ -28,19 +28,21 @@ public class HomeSteps {
     public void xpto1(){
         homeScreen = new HomeScreen();
         homeScreen.clicarMenu();
-     //   getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
+        getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
     }
 
     @Then ("valido frase Home")
     public void xpto2(){
         homeScreen = new HomeScreen();
         Assert.assertEquals(homeScreen.validarTextoHome(), "AWS Device Farm Sample App for Android");
+        getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
     }
 
     @Then ("A mensagem da home inválida")
     public void xpto3(){
         homeScreen = new HomeScreen();
         Assert.assertNotEquals(homeScreen.validarTextoHome(), "AWS Device");
+        getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
     }
 
 

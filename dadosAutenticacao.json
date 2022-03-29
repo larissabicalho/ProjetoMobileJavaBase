@@ -1,6 +1,6 @@
 {
-  "user" : "lari_nazarebicalho@hotmail.com",
-  "senha": "lalelu221510",
-  "userErrado" : "lari_nazarebicalho",
+  "user" : "admin",
+  "senha": "password",
+  "userErrado" : "teste",
   "senhaErrada" : "abc123"
 }

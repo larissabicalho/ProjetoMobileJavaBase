@@ -1,6 +1,7 @@
 package JavaAppiumCucumberExtentReportsTemplate.Bases;
 
 
+import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.*;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.LongPressOptions;
@@ -9,14 +10,14 @@ import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.ElementOption;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Pause;
-import org.openqa.selenium.interactions.PointerInput;
-import org.openqa.selenium.interactions.Sequence;
-import org.openqa.selenium.interactions.touch.TouchActions;
+import org.openqa.selenium.interactions.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
 import static JavaAppiumCucumberExtentReportsTemplate.Utils.DriverFactory.getDriver;
 import static java.time.Duration.ofMillis;
@@ -367,22 +368,9 @@ public class PageBase {
         actions.tap(TapOptions.tapOptions().withElement(ElementOption.element(element)));
         actions.perform();
     }
-    protected void scrollUsingTouchActions_ByElements(MobileElement startElement, MobileElement endElement, int seconds) {
-        TouchAction actions = new TouchAction(driver);
-        actions.press(PointOption.point(startElement.getLocation().x,startElement.getLocation().y))
-                .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(seconds)))
-                .moveTo(PointOption.point(endElement.getLocation().x,endElement.getLocation().y)).release().perform();
-    }
 
 
 
-    public void doubleTap(){
-        MobileElement element = (MobileElement) driver.findElement(By.xpath("//android.widget.FrameLayout[@content-desc='Gesture Action Pad']/android.widget.TextView"));
-
-        TouchActions action = new TouchActions(driver);
-        action.doubleTap(element);
-        action.perform();
-    }
 
     public  void doubleTap2() throws InterruptedException {
         MobileElement element = (MobileElement) new WebDriverWait(driver, 30).
@@ -405,18 +393,22 @@ public class PageBase {
     }
 
 
-
-
-
-    public void flingGesture(MobileElement gestureBox) {
-
-    }
-
     protected void scrollUsingTouchActionsPoint(int startX,int startY, int endX, int endY, int seconds) {
         TouchAction actions = new TouchAction(driver);
         actions.press(PointOption.point(startX,startY))
                 .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(seconds)))
                 .moveTo(PointOption.point(endX,endY)).release().perform();
+    }
+
+
+    protected void scrollUsingTouchActions(MobileElement gestureField, MobileElement gestureField2) {
+
+        Coordinates points = gestureField.getCoordinates();
+        Coordinates points2 = gestureField2.getCoordinates();
+        TouchAction actions = new TouchAction(driver);
+        actions.press(PointOption.point(points.onPage().getX(),points.onPage().getY()))
+                .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(2)))
+                .moveTo(PointOption.point(points2.onPage().getX(),points2.onPage().getY())).release().perform();
     }
 
    public void scrollTexto(By gesture)
@@ -436,6 +428,35 @@ public class PageBase {
         int x = element.getCenter().x;
         int y = element.getCenter().y;
         scrollUsingTouchActionsPoint(x,y,x/2 ,y,1);
+
+    }
+
+    public Object executarComandoAdb(String command, List<String> args) {
+        Map<String, Object> params = ImmutableMap.of("command", command, "args", args);
+        return driver.executeScript("mobile: shell", params);
+    }
+
+    public boolean validarComando() {
+        String command = "am start -a android.bluetooth.adapter.action.REQUEST_ENABLE";
+        List<String> args = Arrays.asList(
+                "");
+        Object o  = "";
+        o = executarComandoAdb(command, args);
+        new Actions(driver).pause(1000).perform();
+
+        return o.toString().split("\r\n").length > 0;
+
+    }
+
+    public boolean validarComandoExecutar() {
+        String command = "am start -a android.bluetooth.adapter.action.REQUEST_DISABLE";
+        List<String> args = Arrays.asList(
+                "");
+        Object o  = "";
+        o = executarComandoAdb(command, args);
+        new Actions(driver).pause(1000).perform();
+
+        return o.toString().split("\r\n").length > 0;
 
     }
 }//fim classe

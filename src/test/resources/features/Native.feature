@@ -5,11 +5,13 @@ Feature: Acessar app
     When clicar no menu lateral
     And clicar no menu Native
     And verificar se existe galeria
+
   @app
   Scenario: Verificar Imagens Restantes
     When clicar no menu lateral
     And clicar no menu Native
     And verificar o resto das imagens
+
   @app
   Scenario Outline: Verificar ContentScrolling
     When clicar no menu lateral
@@ -34,6 +36,7 @@ Feature: Acessar app
     And clicar no menu Native
     And clicar no menu Camera
     Then verificar se o camera apareceu
+
   @app
   Scenario: Verificar Imagens Restantes
     When clicar no menu lateral

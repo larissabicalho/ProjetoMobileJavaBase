@@ -1,6 +1,7 @@
 package JavaAppiumCucumberExtentReportsTemplate.Screens;
 
 import JavaAppiumCucumberExtentReportsTemplate.Bases.PageBase;
+import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
 
 public class MenuScreen extends PageBase {
@@ -16,13 +17,17 @@ public class MenuScreen extends PageBase {
 
     By nativeMenu = By.xpath("//android.widget.TextView[@text='Native Components']");
 
-
     By nestedViewsMenu = By.xpath("//android.widget.TextView[@text='Nested Views']");
 
     By crashBugMenu = By.xpath("//android.widget.TextView[@text='Crash/Bug']");
 
     By alertsMenu = By.xpath("//android.widget.TextView[@text='Alerts']");
 
+    By localMenu = By.xpath("//android.widget.TextView[@text='Local Web View']");
+
+    By fixturesMenu = By.xpath("//android.widget.TextView[@text='Fixtures']");
+
+    By clicarPermitir = By.id("android:id/button1");
 
     public void clicarMenuInputControl(){
         click(inputControlMenu);
@@ -56,6 +61,24 @@ public class MenuScreen extends PageBase {
     public void clicarMenuCrash(){
         click(crashBugMenu);
     }
+
+    public void clicarMenuLocalWeb(){
+        scrollTexto(loginPageMenu);
+        click(localMenu);
+    }
+
+    public void clicarMenuFixtures(){
+        scrollTexto(loginPageMenu);
+        click(fixturesMenu);
+    }
+
+    public void clicarMenuFixturesBlu(){
+        validarComando();
+        click(clicarPermitir);
+        scrollTexto(loginPageMenu);
+        click(fixturesMenu);
+    }
+
 
 
 }

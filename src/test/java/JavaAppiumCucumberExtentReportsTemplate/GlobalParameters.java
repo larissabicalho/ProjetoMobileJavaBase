@@ -52,6 +52,23 @@ public class GlobalParameters {
     public static String AndroidFullReset;
     public static String AndroidOrientation;
 
+    public static String IOSPlatformName;
+    public static String IOSPlatformVersion;
+    public static String IOSBundleId;
+    public static String IOSAppPath;
+    public static String IOSUDID;
+    public static String IOSNoReset;
+    public static String IOSFullReset;
+    public static String IOSSendKeyStrategy;
+    public static String IOSAuto_Accept_Alerts;
+    public static String IOSDeviceName;
+    public static String IOSXcodeCodeId;
+
+    public static String IOSDeviceBrowserStack;
+    public static String IOSOSVersionBrowserStack;
+    public static String IOSProjectBrowserStack;
+
+
 
     public static String AndroidDeviceBrowserStack;
     public static String AndroidOSVersionBrowserStack;
@@ -107,6 +124,12 @@ public class GlobalParameters {
         AppIOSUploadBrowserStack = properties.getProperty("AppIOSUploadBrowserStack");
 
 
+        IOSDeviceBrowserStack = properties.getProperty("IOSDeviceBrowserStack");
+        IOSOSVersionBrowserStack = properties.getProperty("IOSOSVersionBrowserStack");
+        IOSProjectBrowserStack = properties.getProperty("IOSProjectBrowserStack");
+
+
+
         AndroidDeviceBrowserStack = properties.getProperty("AndroidDeviceBrowserStack");
         AndroidOSVersionBrowserStack = properties.getProperty("AndroidOSVersionBrowserStack");
         AndroidProjectBrowserStack = properties.getProperty("AndroidProjectBrowserStack");
@@ -123,6 +146,20 @@ public class GlobalParameters {
         AndroidNoReset=properties.getProperty("AndroidNoReset");
         AndroidFullReset=properties.getProperty("AndroidFullReset");
         AndroidOrientation=properties.getProperty("AndroidOrientation");
+
+        //iOS Region
+        IOSPlatformName  = properties.getProperty("IOSPlatformName");
+        IOSPlatformVersion= properties.getProperty("IOSPlatformVersion");
+        IOSBundleId= properties.getProperty("IOSBundleId");
+        IOSUDID= properties.getProperty("IOSUDID");
+        IOSAuto_Accept_Alerts = properties.getProperty("IOSAuto_Accept_Alerts");
+        IOSDeviceName = properties.getProperty("IOSDeviceName");
+        IOSNoReset= properties.getProperty("IOSNoReset");
+        IOSFullReset= properties.getProperty("IOSFullReset");
+        IOSAppPath = Utils.returnPathProject()+"\\src\\test\\resources\\app\\ios\\"+properties.getProperty("IOSAppPath");
+        IOSSendKeyStrategy=properties.getProperty("IOSSendKeyStrategy");
+        IOSXcodeCodeId = properties.getProperty("IOSXcodeCodeId");
+
 
 
     }
