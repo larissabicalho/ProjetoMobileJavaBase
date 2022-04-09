@@ -9,6 +9,8 @@ public class HomeScreen extends PageBase {
 
     By textoHome = By.xpath("//android.widget.TextView[@content-desc=\"Homepage Headline\"]");
 
+    public HomeScreen(){}
+
     public void clicarMenu(){
         click(menuButton);
     }

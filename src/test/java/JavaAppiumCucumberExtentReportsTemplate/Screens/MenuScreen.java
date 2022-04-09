@@ -1,7 +1,6 @@
 package JavaAppiumCucumberExtentReportsTemplate.Screens;
 
 import JavaAppiumCucumberExtentReportsTemplate.Bases.PageBase;
-import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
 
 public class MenuScreen extends PageBase {
@@ -29,10 +28,11 @@ public class MenuScreen extends PageBase {
 
     By clicarPermitir = By.id("android:id/button1");
 
+    public MenuScreen(){}
+
     public void clicarMenuInputControl(){
         click(inputControlMenu);
     }
-
 
     public void clicarMenuLoginPage(){
         click(loginPageMenu);

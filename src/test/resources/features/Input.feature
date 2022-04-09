@@ -1,6 +1,5 @@
 Feature: Home App
 
-
   @app
   Scenario Outline: Acessa Home
     When clicar no menu lateral
@@ -106,7 +105,6 @@ Feature: Home App
       |dia|
       |22 |
 
-#ajustar
   @app
   Scenario: Acessa Home
     When clicar no menu lateral
@@ -144,8 +142,8 @@ Feature: Home App
     And escolher um método de Gestures Double Tap
     Then verifica a ultima acao <acao>
     Examples:
-      |metodo| acao|
-      |double tap|Event within double tap|
+      |acao|
+      |Event within double tap|
 
   @app
   Scenario Outline: Acessa Home
@@ -166,5 +164,5 @@ Feature: Home App
     And escolher um método de Gestures Fling
     Then verifica a ultima acao <acao>
     Examples:
-       | acao|
+       |acao|
        |Fling |

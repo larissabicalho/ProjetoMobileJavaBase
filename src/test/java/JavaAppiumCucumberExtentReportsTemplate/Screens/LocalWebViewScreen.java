@@ -8,6 +8,8 @@ public class LocalWebViewScreen extends PageBase {
     By lastName = By.xpath("//android.widget.EditText[2]");
     By textoEscrito = By.xpath("(//android.view.View)[3]");
 
+    public LocalWebViewScreen(){}
+
     public String verificarTexto(){
         return getText(textoEscrito);
     }

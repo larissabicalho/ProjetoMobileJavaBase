@@ -2,8 +2,6 @@ package JavaAppiumCucumberExtentReportsTemplate.StepDefinitions;
 
 import JavaAppiumCucumberExtentReportsTemplate.Bases.ReadToastMessage;
 import JavaAppiumCucumberExtentReportsTemplate.Screens.AlertsScreen;
-import JavaAppiumCucumberExtentReportsTemplate.Screens.CrashScreen;
-import JavaAppiumCucumberExtentReportsTemplate.Screens.Input.SubmitScreen;
 import JavaAppiumCucumberExtentReportsTemplate.Utils.DriverFactory;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -20,9 +18,10 @@ public class AlertsSteps {
 
     AlertsScreen alertsScreen;
 
+    public AlertsSteps(){alertsScreen = new AlertsScreen();}
+
     @Then("clicar no Toast e validar Mensagem")
     public void clicarToastMenu() throws TesseractException, IOException {
-        alertsScreen = new AlertsScreen();
         ReadToastMessage rdm = new ReadToastMessage();
 
         String msgEsperada = "Toast";
@@ -35,22 +34,19 @@ public class AlertsSteps {
     }
 
     @And("clicar no botao Alert")
-    public void xpto1(){
-        alertsScreen = new AlertsScreen();
+    public void clicarNoAlert(){
         alertsScreen.clicarNoAlert();
         getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
     }
 
     @And("clicar no botao Toast")
-    public void xpto2(){
-        alertsScreen = new AlertsScreen();
+    public void clicarNoToast(){
         alertsScreen.clicarNoToast();
         getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
     }
 
     @Then("verificar a mensagem do alerta")
-    public void xpto3(){
-        alertsScreen = new AlertsScreen();
+    public void verificarAlerta(){
         Assert.assertEquals(alertsScreen.getAlertText(),"This is the alert message");
         getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
     }

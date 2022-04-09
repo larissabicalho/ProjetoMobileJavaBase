@@ -14,6 +14,7 @@ public class SubmitScreen extends PageBase {
     By submitClick = By.xpath("//android.widget.TextView[@text='Submit Button']");
     By submitButton = By.xpath("//android.widget.Button[@content-desc='Submit Button']");
 
+    public SubmitScreen(){}
 
     public void elementoSubmit(){
         while(!returnElementDisplayedElement(submitClick)){

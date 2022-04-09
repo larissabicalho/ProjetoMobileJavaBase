@@ -12,6 +12,7 @@ public class DatePickerScreen extends PageBase {
     By verificarData = By.xpath("//android.widget.TextView[@content-desc='Datepicker Display']");
     String diaDoMes = "//android.view.View[@text='###']";
 
+    public DatePickerScreen(){}
 
     public void elementoDate(){
         while(!returnElementDisplayedElement(dateClick)){
@@ -32,9 +33,9 @@ public class DatePickerScreen extends PageBase {
     }
 
     public void trocarODia(String dia) {
-       diaDoMes = diaDoMes.replace("###", dia);
-       waitForElement(By.xpath(diaDoMes));
-       click(By.xpath(diaDoMes));
+        diaDoMes = diaDoMes.replace("###", dia);
+        waitForElement(By.xpath(diaDoMes));
+        click(By.xpath(diaDoMes));
     }
 
     public boolean verificarAno(){

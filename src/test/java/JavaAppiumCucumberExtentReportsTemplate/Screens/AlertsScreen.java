@@ -14,6 +14,8 @@ public class AlertsScreen extends PageBase {
 
     ReadToastMessage readToastMessage;
 
+    public AlertsScreen(){}
+
     public void clicarNoAlert(){
         waitForElement(botaoAlert);
         click(botaoAlert);
@@ -32,10 +34,9 @@ public class AlertsScreen extends PageBase {
     }
 
     public String getAlertText() {
-         waitForElement(alertMessage);
-         return getText(alertMessage);
+        waitForElement(alertMessage);
+        return getText(alertMessage);
     }
-
 
 
 }

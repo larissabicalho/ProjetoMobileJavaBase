@@ -2,11 +2,12 @@ package JavaAppiumCucumberExtentReportsTemplate.Screens.Native;
 
 import JavaAppiumCucumberExtentReportsTemplate.Bases.PageBase;
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class ContentOutOfViewScreen extends PageBase {
     By menuContent = By.xpath("//android.widget.TextView[@text='Content Out of View']");
     By hiddenText = By.id("com.amazonaws.devicefarm.android.referenceapp:id/hidden_text");
+
+    public ContentOutOfViewScreen(){}
 
     public void clicarMenuContent(){
         while(!returnElementDisplayedElement(menuContent)){
@@ -17,8 +18,8 @@ public class ContentOutOfViewScreen extends PageBase {
     }
 
     public void scroolAteHidden(){
-            topToBottonSwipe();
-            topToBottonSwipe();
+        topToBottonSwipe();
+        topToBottonSwipe();
     }
 
     public String verificarSeOTextoAparecendo(){
@@ -26,7 +27,6 @@ public class ContentOutOfViewScreen extends PageBase {
         waitForElementBeVisible(hiddenText);
         return getText(hiddenText);
     }
-
 
 
 }

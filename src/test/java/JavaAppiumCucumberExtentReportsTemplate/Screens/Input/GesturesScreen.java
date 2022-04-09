@@ -9,10 +9,12 @@ public class GesturesScreen extends PageBase {
     By gesturesButton = By.id("com.amazonaws.devicefarm.android.referenceapp:id/input_gesture_action_pad");
     By visualizarTexto = By.id("com.amazonaws.devicefarm.android.referenceapp:id/input_gesture_content");
 
+    public GesturesScreen(){}
+
     public void elementoGestures(){
         while(!returnElementDisplayedElement(gesturesClick)){
-                scrollUsingTouchActionsOnlyY(2);
-            }
+            scrollUsingTouchActionsOnlyY(2);
+        }
         click(gesturesClick);
     }
     public void longPresGestures(){
@@ -20,12 +22,10 @@ public class GesturesScreen extends PageBase {
     }
 
     public void tapGestures(){
-         tap(gesturesButton);
+        tap(gesturesButton);
     }
 
-    public void doubleTapGestures() throws InterruptedException {
-        doubleTap2();
-    }
+    public void doubleTapGestures() throws InterruptedException {doubleTap2();}
 
     public void flyGestures(){
         scrollTexto(gesturesButton);

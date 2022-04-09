@@ -8,6 +8,8 @@ public class SpinnerScreen extends PageBase {
     String spinnerOption = "//android.widget.TextView[@text='###']";
     By verificarOption = By.xpath("//android.widget.TextView[@content-desc='Spinner Display']");
 
+    public SpinnerScreen(){}
+
     public void elementoSpinner(){
         while(!returnElementDisplayedElement(spinnerClick)){
             scrollUsingTouchActionsOnlyY(2);

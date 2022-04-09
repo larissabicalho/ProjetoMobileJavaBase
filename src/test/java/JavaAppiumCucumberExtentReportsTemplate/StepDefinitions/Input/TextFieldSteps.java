@@ -13,16 +13,17 @@ import static JavaAppiumCucumberExtentReportsTemplate.Hooks.Hooks.getScenario;
 public class TextFieldSteps {
 
     TextFieldScreen textFieldScreen;
+
+    public TextFieldSteps(){ textFieldScreen = new TextFieldScreen();}
+
     @And("escrever Texto (.*)")
     public void clicarNoVideoPlayer(String texto){
-        textFieldScreen = new TextFieldScreen();
         textFieldScreen.escreverTexto(texto);
         getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
     }
 
     @Then("verificar se o texto esta escrito (.*)")
     public void verificarTexto(String texto) {
-        textFieldScreen = new TextFieldScreen();
         Assert.assertEquals(textFieldScreen.verificarSeEstaEscrito(),texto);
         getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
     }

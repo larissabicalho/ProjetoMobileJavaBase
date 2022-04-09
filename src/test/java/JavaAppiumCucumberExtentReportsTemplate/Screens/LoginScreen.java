@@ -12,10 +12,9 @@ public class LoginScreen extends PageBase {
     By clicarLogout = By.id("com.amazonaws.devicefarm.android.referenceapp:id/alt_button");
     By clicarTryButton = By.id("com.amazonaws.devicefarm.android.referenceapp:id/alt_button");
 
-    //Actions
-    public void preencherUsuario(String usuario) {
-        sendKeys(usernameField, usuario);
-    }
+    public LoginScreen(){}
+
+    public void preencherUsuario(String usuario) { sendKeys(usernameField, usuario);}
 
     public void preencherSenha(String senha) {
         sendKeys(passwordField, senha);

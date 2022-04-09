@@ -8,6 +8,8 @@ public class VideoPlayerScreen extends PageBase {
     By menuVideo = By.xpath("//android.widget.TextView[@text='Video Player']");
     By videoAparecendo = By.id("com.amazonaws.devicefarm.android.referenceapp:id/native_video_player");
 
+    public VideoPlayerScreen(){}
+
     public void clicarMenuVideo(){
         while(!returnElementDisplayedElement(menuVideo)){
             scrollUsingTouchActionsOnlyY(2);

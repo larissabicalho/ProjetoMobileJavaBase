@@ -8,6 +8,8 @@ public class CheckboxScreen extends PageBase {
     By checkBoxButton = By.id("com.amazonaws.devicefarm.android.referenceapp:id/input_checkbox");
     By validarCheckBox = By.xpath("//android.widget.TextView[@content-desc='Checkbox Display']");
 
+    public CheckboxScreen(){}
+
     public void elementoCheckbox(){
         while(!returnElementDisplayedElement(checkBoxClick)){
             scrollUsingTouchActionsOnlyY(2);

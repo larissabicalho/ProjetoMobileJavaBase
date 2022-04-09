@@ -8,6 +8,8 @@ public class ContentScrollingScreen extends PageBase {
     By menuScrolling = By.xpath("//android.widget.TextView[@text='Content Scrolling']");
     By textoScrolling = By.className("android.widget.ScrollView");
 
+    public ContentScrollingScreen(){}
+
     public void clicarMenuScrooling(){
         while(!returnElementDisplayedElement(menuScrolling)){
             scrollUsingTouchActionsOnlyY(2);
@@ -23,7 +25,7 @@ public class ContentScrollingScreen extends PageBase {
     }
 
     public Boolean verificarSeOTextoAparece(){
-       return returnElementDisplayed(textoScrolling);
+        return returnElementDisplayed(textoScrolling);
     }
 
 }

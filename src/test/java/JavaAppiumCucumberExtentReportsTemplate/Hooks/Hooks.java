@@ -1,5 +1,6 @@
 package JavaAppiumCucumberExtentReportsTemplate.Hooks;
 
+import JavaAppiumCucumberExtentReportsTemplate.GlobalParameters;
 import JavaAppiumCucumberExtentReportsTemplate.Utils.DriverFactory;
 import JavaAppiumCucumberExtentReportsTemplate.Utils.Utils;
 import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
@@ -11,17 +12,24 @@ import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 
+import static JavaAppiumCucumberExtentReportsTemplate.GlobalParameters.isDeviceFarm;
+
 public class Hooks {
 
     public static Scenario scenario;
-    public static Scenario getScenario() {return scenario; }
+
+    public static Scenario getScenario() {
+        return scenario;
+    }
+
     String screenshotdir = System.getProperty("user.dir") + "/test-output/Screenshots/";
 
     @Before
     public void beforMethodSetUp(Scenario _scenario) throws Throwable {
         scenario = _scenario;
+        new GlobalParameters();
         cleanDirectoryReport();
-        DriverFactory.inicializaDriver(false);
+        DriverFactory.inicializaDriver(isDeviceFarm);
     }
 
     @After
@@ -39,7 +47,6 @@ public class Hooks {
         if ((new File(screenshotdir)).exists())
             FileUtils.cleanDirectory(new File(screenshotdir));
     }
-
 
 
 }

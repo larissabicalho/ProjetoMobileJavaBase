@@ -8,6 +8,8 @@ public class RadioButtonsScreen extends PageBase {
     By verificarWeb = By.xpath("//android.widget.TextView[@content-desc='Radio Button Display']");
     String radioButtonWeb = "//android.widget.RadioButton[@text='###']";
 
+    public RadioButtonsScreen(){}
+
     public void elementoRadio(){
         while(!returnElementDisplayedElement(radioClick)){
             scrollUsingTouchActionsOnlyY(2);

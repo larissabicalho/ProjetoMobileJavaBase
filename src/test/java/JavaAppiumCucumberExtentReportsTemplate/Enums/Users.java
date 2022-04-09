@@ -33,17 +33,13 @@ public class Users {
         return mapper.readValue(new File(arquivo), Users.class);
     }
 
-    public String getUser() {
-        return user;
-    }
+    public String getUser() {return user;}
 
     public String getSenha() {
         return senha;
     }
 
-    public String getSenhaErrada() {
-        return senhaErrada;
-    }
+    public String getSenhaErrada() {return senhaErrada;}
 
     public String getUserErrado() {
         return userErrado;

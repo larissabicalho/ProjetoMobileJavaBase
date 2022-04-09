@@ -30,43 +30,43 @@ public class PageBase {
     private WebDriverWait wait = null;
     protected JavascriptExecutor javaScriptExecutor = null;
 
-    public PageBase(){
+    public PageBase() {
         driver = getDriver();
-        wait = new WebDriverWait (driver, 90);
-        javaScriptExecutor = (JavascriptExecutor)driver;
+        wait = new WebDriverWait(driver, 90);
+        javaScriptExecutor = (JavascriptExecutor) driver;
     } //fim construtor
 
     //mobile elements
-    protected void waitForElement(WebElement element){
+    protected void waitForElement(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
         wait.until(elementToBeClickable(element));
     }
 
     protected void scrollUsingTouchActions(int seconds) {
         Dimension size = driver.manage().window().getSize();
-        int startx = (int) (size.width/2);
+        int startx = (int) (size.width / 2);
 
         int starty = (int) (size.height * 0.80);
         int endy = (int) (size.height * 0.20);
         TouchAction actions = new TouchAction(driver);
         actions.press(PointOption.point(startx, starty))
                 .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(seconds)))// Start at 100,100
-                .moveTo(PointOption.point(startx,endy)).release().perform(); // Passing absolute values of 200,200 ending up at 200,200
+                .moveTo(PointOption.point(startx, endy)).release().perform(); // Passing absolute values of 200,200 ending up at 200,200
     }
 
     protected void scrollUsingTouchActionsOnlyY(int seconds) {
         Dimension size = driver.manage().window().getSize();
-        int startx = (int) (size.height/4);
+        int startx = (int) (size.height / 4);
 
         int starty = (int) (size.width * 0.98);
         int endy = (int) (size.width * 0.10);
         TouchAction actions = new TouchAction(driver);
         actions.press(PointOption.point(starty, startx))
                 .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(seconds)))// Start at 100,100
-                .moveTo(PointOption.point(endy,startx)).release().perform(); // Passing absolute values of 200,200 ending up at 200,200
+                .moveTo(PointOption.point(endy, startx)).release().perform(); // Passing absolute values of 200,200 ending up at 200,200
     }
 
-    public void esconderTeclado(){
+    public void esconderTeclado() {
         getDriver().hideKeyboard();
     }
 
@@ -79,43 +79,43 @@ public class PageBase {
     }
 
 
-    protected void click(MobileElement element){
+    protected void click(MobileElement element) {
         waitForElement(element);
         element.click();
     }
 
 
-    protected void sendKeys(MobileElement element, String text){
+    protected void sendKeys(MobileElement element, String text) {
         waitForElement(element);
         element.sendKeys(text);
     }
 
-    protected String getText(MobileElement element){
+    protected String getText(MobileElement element) {
         waitForElement(element);
         String text = element.getText();
         return text;
     }
 
     public void topToBottonSwipe() {
-        Dimension dim= driver.manage().window().getSize();
-        int height=(int) dim.getHeight();
-        int width=(int) dim.getWidth();
-        int x= width/2;
-        int startY=(int) (height*0.80);
-        int endY=(int) (height*0.20);
+        Dimension dim = driver.manage().window().getSize();
+        int height = (int) dim.getHeight();
+        int width = (int) dim.getWidth();
+        int x = width / 2;
+        int startY = (int) (height * 0.80);
+        int endY = (int) (height * 0.20);
 
         TouchAction actions = new TouchAction(driver);
-        actions.press(PointOption.point(x,startY))
+        actions.press(PointOption.point(x, startY))
                 .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(2)))
-                .moveTo(PointOption.point(x,endY)).release().perform();
+                .moveTo(PointOption.point(x, endY)).release().perform();
     }
 
     public void topToBottonSwipe2() {
         Dimension dim = driver.manage().window().getSize();
-        int height=(int) dim.getHeight();
-        int width=(int) dim.getWidth();
-        int x= width/2;
-        int y = height/2;
+        int height = (int) dim.getHeight();
+        int width = (int) dim.getWidth();
+        int x = width / 2;
+        int y = height / 2;
         int bottomEdge = (int) (height * 0.85f);
         new TouchAction(driver)
                 .press(PointOption.point(x, y))
@@ -124,7 +124,6 @@ public class PageBase {
                 .release()
                 .perform();
     }
-
 
 
     ///TOP, RIGHT, BOTTOM e LEFT
@@ -208,7 +207,6 @@ public class PageBase {
         TouchAction actions = new TouchAction(driver);
         actions.press(startPointOption).waitAction(waitOptions).moveTo(endPointOption).waitAction().release().perform();
     }
-
 
 
     ///TOP, RIGHT, BOTTOM e LEFT
@@ -295,11 +293,11 @@ public class PageBase {
 
     //By locator
 
-    protected void waitForBy(By locator){
+    protected void waitForBy(By locator) {
         wait.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
 
-    protected MobileElement waitForElement(By locator){
+    protected MobileElement waitForElement(By locator) {
         wait.until(ExpectedConditions.presenceOfElementLocated(locator));
         MobileElement element = (MobileElement) driver.findElement(locator);
         wait.until(ExpectedConditions.visibilityOf(element));
@@ -308,42 +306,42 @@ public class PageBase {
         return element;
     }
 
-    protected void click(By locator){
+    protected void click(By locator) {
         waitForElement(locator).click();
     }
 
-    protected void clear(By locator){
+    protected void clear(By locator) {
         waitForElement(locator).clear();
     }
 
-    protected void sendKeys(By locator, String text){
+    protected void sendKeys(By locator, String text) {
         waitForElement(locator).sendKeys(text);
     }
 
-    protected  void clicarEmEnter() {
-        ((AndroidDriver)driver).getKeyboard().pressKey(Keys.ENTER);
+    protected void clicarEmEnter() {
+        ((AndroidDriver) driver).getKeyboard().pressKey(Keys.ENTER);
     }
 
-    protected String getText(By locator){
+    protected String getText(By locator) {
         String text = waitForElement(locator).getText();
         return text;
     }
 
-    protected boolean returnElementDisplayed(By locator){
+    protected boolean returnElementDisplayed(By locator) {
         return waitForElementBeVisible(locator).isDisplayed();
     }
 
 
-    protected boolean returnElementDisplayedElement(By locator){
+    protected boolean returnElementDisplayedElement(By locator) {
         try {
             return driver.findElement(locator).isDisplayed();
-        } catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
     }
 
 
-    protected MobileElement waitForElementBeVisible(By locator){
+    protected MobileElement waitForElementBeVisible(By locator) {
         wait.until(ExpectedConditions.presenceOfElementLocated(locator));
         MobileElement element = (MobileElement) driver.findElement(locator);
 
@@ -352,16 +350,15 @@ public class PageBase {
     }
 
     public void longPress(By gesture) {
-            waitForElement(gesture);
-            MobileElement element = (MobileElement) driver.findElement(gesture);
-            TouchAction actions = new TouchAction(driver);
-            actions.longPress(LongPressOptions.longPressOptions().withElement(ElementOption.element(element)));
-            actions.perform();
+        waitForElement(gesture);
+        MobileElement element = (MobileElement) driver.findElement(gesture);
+        TouchAction actions = new TouchAction(driver);
+        actions.longPress(LongPressOptions.longPressOptions().withElement(ElementOption.element(element)));
+        actions.perform();
     }
 
 
-
-    protected void tap(By gesture){
+    protected void tap(By gesture) {
         waitForElement(gesture);
         MobileElement element = (MobileElement) driver.findElement(gesture);
         TouchAction actions = new TouchAction(driver);
@@ -370,9 +367,7 @@ public class PageBase {
     }
 
 
-
-
-    public  void doubleTap2() throws InterruptedException {
+    public void doubleTap2() throws InterruptedException {
         MobileElement element = (MobileElement) new WebDriverWait(driver, 30).
                 until(elementToBeClickable(MobileBy.AccessibilityId("Gesture Action Pad")));
         Thread.sleep(1000);
@@ -393,11 +388,11 @@ public class PageBase {
     }
 
 
-    protected void scrollUsingTouchActionsPoint(int startX,int startY, int endX, int endY, int seconds) {
+    protected void scrollUsingTouchActionsPoint(int startX, int startY, int endX, int endY, int seconds) {
         TouchAction actions = new TouchAction(driver);
-        actions.press(PointOption.point(startX,startY))
+        actions.press(PointOption.point(startX, startY))
                 .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(seconds)))
-                .moveTo(PointOption.point(endX,endY)).release().perform();
+                .moveTo(PointOption.point(endX, endY)).release().perform();
     }
 
 
@@ -406,28 +401,26 @@ public class PageBase {
         Coordinates points = gestureField.getCoordinates();
         Coordinates points2 = gestureField2.getCoordinates();
         TouchAction actions = new TouchAction(driver);
-        actions.press(PointOption.point(points.onPage().getX(),points.onPage().getY()))
+        actions.press(PointOption.point(points.onPage().getX(), points.onPage().getY()))
                 .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(2)))
-                .moveTo(PointOption.point(points2.onPage().getX(),points2.onPage().getY())).release().perform();
+                .moveTo(PointOption.point(points2.onPage().getX(), points2.onPage().getY())).release().perform();
     }
 
-   public void scrollTexto(By gesture)
-{
-    waitForElement(gesture);
-    MobileElement element = (MobileElement) driver.findElement(gesture);
-    int x = element.getCenter().x;
-    int y = element.getCenter().y;
-    scrollUsingTouchActionsPoint(x,y,x ,y/2,2);
-
-}
-
-    public void scrollTextoScrool(By gesture)
-    {
+    public void scrollTexto(By gesture) {
         waitForElement(gesture);
         MobileElement element = (MobileElement) driver.findElement(gesture);
         int x = element.getCenter().x;
         int y = element.getCenter().y;
-        scrollUsingTouchActionsPoint(x,y,x/2 ,y,1);
+        scrollUsingTouchActionsPoint(x, y, x, y / 2, 2);
+
+    }
+
+    public void scrollTextoScrool(By gesture) {
+        waitForElement(gesture);
+        MobileElement element = (MobileElement) driver.findElement(gesture);
+        int x = element.getCenter().x;
+        int y = element.getCenter().y;
+        scrollUsingTouchActionsPoint(x, y, x / 2, y, 1);
 
     }
 
@@ -440,7 +433,7 @@ public class PageBase {
         String command = "am start -a android.bluetooth.adapter.action.REQUEST_ENABLE";
         List<String> args = Arrays.asList(
                 "");
-        Object o  = "";
+        Object o = "";
         o = executarComandoAdb(command, args);
         new Actions(driver).pause(1000).perform();
 
@@ -452,7 +445,7 @@ public class PageBase {
         String command = "am start -a android.bluetooth.adapter.action.REQUEST_DISABLE";
         List<String> args = Arrays.asList(
                 "");
-        Object o  = "";
+        Object o = "";
         o = executarComandoAdb(command, args);
         new Actions(driver).pause(1000).perform();
 

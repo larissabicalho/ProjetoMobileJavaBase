@@ -13,6 +13,7 @@ public class NestedViewsScreen extends PageBase {
     By nextLevelBackButton = By.id("com.amazonaws.devicefarm.android.referenceapp:id/back_navigation_next_button");
     By contadorLevel = By.id("com.amazonaws.devicefarm.android.referenceapp:id/back_navigation_counter");
 
+    public NestedViewsScreen(){}
 
     public void clicarNoUp(){
         waitForElement(upButton);
@@ -48,13 +49,10 @@ public class NestedViewsScreen extends PageBase {
 
 
     public String verificarFinalLevel(){
-       return getText(textoAcima);
+        return getText(textoAcima);
     }
 
-    public String verificarLevel(){
-        System.out.println(getText(contadorLevel));
-        return getText(contadorLevel);
-    }
+    public String verificarLevel(){ return getText(contadorLevel);}
 
     public boolean verificarSeVoltouPrincipal(){
         return returnElementDisplayedElement(upButton);

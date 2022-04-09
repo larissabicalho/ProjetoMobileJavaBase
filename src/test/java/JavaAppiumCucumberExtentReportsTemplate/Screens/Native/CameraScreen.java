@@ -8,6 +8,8 @@ public class CameraScreen extends PageBase {
     By menuCamera = By.xpath("//android.widget.TextView[@text='Camera']");
     By cameraAparecendo = By.id("com.amazonaws.devicefarm.android.referenceapp:id/camera_surface_view");
 
+    public CameraScreen(){}
+
     public void clicarMenuCamera(){
         while(!returnElementDisplayedElement(menuCamera)){
             scrollUsingTouchActionsOnlyY(2);

@@ -8,6 +8,7 @@ public class ToggleButtonScreen extends PageBase {
     By toggleButton = By.id("com.amazonaws.devicefarm.android.referenceapp:id/input_switch");
     By verificarSeToggleTaOn = By.xpath("//android.widget.FrameLayout[@content-desc='ON']");
 
+    public ToggleButtonScreen(){}
 
     public void elementoToggle(){
         while(!returnElementDisplayedElement(toggleClick)){

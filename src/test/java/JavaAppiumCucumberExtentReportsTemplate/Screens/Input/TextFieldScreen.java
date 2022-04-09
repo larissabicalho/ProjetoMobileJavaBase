@@ -7,6 +7,8 @@ public class TextFieldScreen extends PageBase {
 
     By textField = By.id("com.amazonaws.devicefarm.android.referenceapp:id/input_edit_text");
 
+    public TextFieldScreen(){}
+
     public void escreverTexto(String texto){
         sendKeys(textField, texto);
     }
