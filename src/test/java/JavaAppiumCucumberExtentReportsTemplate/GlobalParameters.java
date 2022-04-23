@@ -26,7 +26,6 @@ public class GlobalParameters {
 
     public static String AppiumIPAddress;
     public static int AppiumPort;
-    public static boolean isAndroid;
     public static boolean isDeviceFarm;
     public static boolean isLocal;
     public static boolean isInstalado;
@@ -91,7 +90,6 @@ public class GlobalParameters {
         AppiumPort = Integer.parseInt(properties.getProperty("AppiumPort"));
 
         isEmulador = Boolean.parseBoolean(properties.getProperty("isEmulador"));
-        isAndroid = Boolean.parseBoolean(properties.getProperty("isAndroid"));
         isDeviceFarm = Boolean.parseBoolean(properties.getProperty("isDeviceFarm"));
         isLocal = Boolean.parseBoolean(properties.getProperty("isLocal"));
         isInstalado = Boolean.parseBoolean(properties.getProperty("isInstalado"));

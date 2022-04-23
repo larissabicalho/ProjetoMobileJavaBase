@@ -1,18 +1,18 @@
-Feature: Acessar app
+Feature: Local Web View
 
   @app
-  Scenario: Verificar Se Acessou o Google
+  Scenario: Verificar Se LocalWebView Aparece Texto
     When clicar no menu lateral
     And clicar no menu LocalWebView
     Then verificar texto Principal
 
   @app
-  Scenario Outline: Verificar Se Acessou o Google
+  Scenario Outline: Preencher Nome e LastName
     When clicar no menu lateral
     And clicar no menu LocalWebView
     And preencher nome <nome>
     And preencher lastName <lastName>
-    Then verificar texto con nome <nome> e lastName <lastName>
+    Then verificar texto con nome <nome>
 
     Examples:
     |nome| lastName|

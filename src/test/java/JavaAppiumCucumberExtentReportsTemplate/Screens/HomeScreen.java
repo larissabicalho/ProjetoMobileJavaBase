@@ -12,6 +12,7 @@ public class HomeScreen extends PageBase {
     public HomeScreen(){}
 
     public void clicarMenu(){
+        waitForElement(menuButton);
         click(menuButton);
     }
 

@@ -20,7 +20,7 @@ public class ContentScrollingScreen extends PageBase {
 
     public void scroolAteFinalDoTexto(String qtLoop){
         for(int i =0; i < Integer.parseInt(qtLoop); i ++) {
-            topToBottonSwipe2();
+            topToBottonSwipe();
         }
     }
 

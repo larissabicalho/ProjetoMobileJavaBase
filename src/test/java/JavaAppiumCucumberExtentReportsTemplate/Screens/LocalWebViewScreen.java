@@ -6,12 +6,12 @@ import org.openqa.selenium.By;
 public class LocalWebViewScreen extends PageBase {
     By primeiroName = By.xpath("//android.widget.EditText[1]");
     By lastName = By.xpath("//android.widget.EditText[2]");
-    By textoEscrito = By.xpath("(//android.view.View)[3]");
+    String texto  = "//*[@text='###']";
 
     public LocalWebViewScreen(){}
 
     public String verificarTexto(){
-        return getText(textoEscrito);
+        return getText(primeiroName);
     }
 
     public void preencherName(String name){

@@ -17,7 +17,9 @@ public class WebScreen extends PageBase {
         click(textoSite);
     }
 
-    public void preencherSite(String site){sendKeys(textoSite, site);}
+    public void preencherSite(String site){
+        sendKeysBoard(site);
+    }
 
     public String validarMensagemGoogle(){
         return getText(validarGoogle);

@@ -1,4 +1,4 @@
-Feature: Acessar app
+Feature: Native
 
   @app
   Scenario: Verificar Se Galeria Existe
@@ -21,24 +21,24 @@ Feature: Acessar app
 
     Examples:
       | value |
-      | 9|
+      | 3|
 
   @app
-  Scenario: Verificar Imagens Restantes
+  Scenario: Verificar Video
     When clicar no menu lateral
     And clicar no menu Native
     And clicar no menu VideoPlayer
     Then verificar se o video apareceu
 
   @app
-  Scenario: Verificar Imagens Restantes
+  Scenario: Verificar Camera
     When clicar no menu lateral
     And clicar no menu Native
     And clicar no menu Camera
     Then verificar se o camera apareceu
 
   @app
-  Scenario: Verificar Imagens Restantes
+  Scenario: Verificar ContentOutOfView
     When clicar no menu lateral
     And clicar no menu Native
     And clicar no menu ContentOutOfView

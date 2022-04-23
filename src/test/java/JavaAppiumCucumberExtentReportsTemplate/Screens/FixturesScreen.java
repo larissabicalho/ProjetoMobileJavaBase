@@ -13,7 +13,7 @@ public class FixturesScreen extends PageBase {
     By nfcText = By.id("com.amazonaws.devicefarm.android.referenceapp:id/nfc");
     By clicarPermitir = By.id("android:id/button1");
 
-    private static final String BOOLEAN_SELECTOR = "true|false|Not Available|";
+    private static final String BOOLEAN_SELECTOR = "true|false";
 
     public FixturesScreen(){}
 
@@ -42,11 +42,11 @@ public class FixturesScreen extends PageBase {
     }
 
     public void verificarLong(){
-        Assert.assertTrue(statusLong().matches(BOOLEAN_SELECTOR));
+        Assert.assertFalse(statusLong().matches(BOOLEAN_SELECTOR));
     }
 
     public void verificarLat(){
-        Assert.assertTrue(statusLat().matches(BOOLEAN_SELECTOR));
+        Assert.assertFalse(statusLat().matches(BOOLEAN_SELECTOR));
     }
 
     public void verificarWifi(){

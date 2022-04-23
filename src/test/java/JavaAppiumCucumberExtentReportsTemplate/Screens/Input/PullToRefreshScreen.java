@@ -3,9 +3,14 @@ package JavaAppiumCucumberExtentReportsTemplate.Screens.Input;
 import JavaAppiumCucumberExtentReportsTemplate.Bases.PageBase;
 import org.openqa.selenium.By;
 
+import java.text.DateFormat;
+import java.text.Format;
 import java.text.SimpleDateFormat;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 public class PullToRefreshScreen extends PageBase {
     By pullClick = By.id("com.amazonaws.devicefarm.android.referenceapp:id/input_refresh_display");
@@ -26,16 +31,14 @@ public class PullToRefreshScreen extends PageBase {
     }
 
     public String verificarHoraAtual(){
-        Date date = Calendar.getInstance().getTime();
-        SimpleDateFormat broken = new SimpleDateFormat("hh:mm");
-        return broken.format(date);
+        DateFormat dateFormat2 = new SimpleDateFormat("hh:mm");
+        String dateString2 = dateFormat2.format(new Date()).toString();
+        return dateString2;
     }
 
-    public boolean verificarSeExisteHora(){
-        String textoNaTela =  getText(pullClick);
-        textoNaTela = textoNaTela.substring(0,5);
-        boolean x =  textoNaTela.contains(verificarHoraAtual());
-        return x;
+    public String verificarSeExisteHora(){
+        waitForElement(pullClick);
+        return getText(pullClick);
     }
 
 }

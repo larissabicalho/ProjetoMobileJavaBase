@@ -4,6 +4,8 @@ package JavaAppiumCucumberExtentReportsTemplate.Bases;
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.*;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.touch.LongPressOptions;
 import io.appium.java_client.touch.TapOptions;
 import io.appium.java_client.touch.WaitOptions;
@@ -42,17 +44,6 @@ public class PageBase {
         wait.until(elementToBeClickable(element));
     }
 
-    protected void scrollUsingTouchActions(int seconds) {
-        Dimension size = driver.manage().window().getSize();
-        int startx = (int) (size.width / 2);
-
-        int starty = (int) (size.height * 0.80);
-        int endy = (int) (size.height * 0.20);
-        TouchAction actions = new TouchAction(driver);
-        actions.press(PointOption.point(startx, starty))
-                .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(seconds)))// Start at 100,100
-                .moveTo(PointOption.point(startx, endy)).release().perform(); // Passing absolute values of 200,200 ending up at 200,200
-    }
 
     protected void scrollUsingTouchActionsOnlyY(int seconds) {
         Dimension size = driver.manage().window().getSize();
@@ -110,6 +101,55 @@ public class PageBase {
                 .moveTo(PointOption.point(x, endY)).release().perform();
     }
 
+
+    protected void doubleTapPress(By gestures){
+        MobileElement element = (MobileElement) new WebDriverWait(driver, 5).
+                until(elementToBeClickable(MobileBy.AccessibilityId("Gesture Action Pad")));
+        Coordinates points = element.getCoordinates();
+        doubleTap(points.onPage().getX(), points.onPage().getY());
+
+    }
+
+    public void swipeToLeft() {
+        Dimension dim= driver.manage().window().getSize();
+        int height=(int) dim.getHeight();
+        int width=(int) dim.getWidth();
+
+        //int startx=(int) (width - ( width * 0.1));
+        int startx=(int) (width - ( width * 0.01));
+        int endx=(int) ( width * 0.1);
+        int startY= (int) (height*0.80);
+        int endY=(int) (height*0.80);
+
+        TouchAction actions = new TouchAction(driver);
+        actions.press(PointOption.point(startx , startY))
+                .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(5)))
+                .moveTo(PointOption.point(endx, endY)).release().perform();
+
+    }
+
+    protected boolean returnIfElementExists(By element){
+        boolean result = false;
+        try
+        {
+            waitForElement(element);
+            result = true;
+        }
+        catch (Exception e)
+        {
+
+        }
+        return result;
+    }
+
+
+    protected void doubleTap(int x, int y){
+            //protected void doubleTapPress(Point points){
+            TouchAction actions = new TouchAction(driver);
+            actions.press(PointOption.point(x, y)).release().perform()
+                    .press(PointOption.point(x,y)).release().perform();
+
+    }
     public void topToBottonSwipe2() {
         Dimension dim = driver.manage().window().getSize();
         int height = (int) dim.getHeight();
@@ -209,87 +249,6 @@ public class PageBase {
     }
 
 
-    ///TOP, RIGHT, BOTTOM e LEFT
-    public void swipeElementWithDirection2(By locator, String direction) {
-
-        MobileElement element = waitForElement(locator);
-
-        String action = "";
-        double endXPercen = 0.09;
-        int startX, startY, endX, endY;
-
-        //Coleta a largura da tela
-        int screenWidth = driver.manage().window().getSize().width;
-
-        //Coleta a altura da tela
-        int screenHeight = driver.manage().window().getSize().height;
-
-        switch (direction) {
-            case "TOP":
-                //Coleta o centro eixo x do elemento
-                startX = element.getCenter().getX();
-                //Coleta a altura do elemento
-                startY = element.getSize().getHeight();
-
-                endX = startX;
-
-                //Calculo do limite do eixo Y (altura - percentil de altura aceitavel)
-                endY = screenHeight - (int) (screenHeight * endXPercen);
-                action = "TOP";
-                break;
-
-            case "RIGHT":
-                //Coleta o centro eixo x do elemento
-                startX = element.getCenter().getX();
-                //Coleta a altura do elemento
-                startY = element.getCenter().getY();
-
-                //Calcula o ponto final do eixo X: baseando-se na largura da tela x percentil
-                endX = (int) (screenWidth * endXPercen);
-                endY = startY;
-                action = "RIGHT";
-                break;
-
-            case "LEFT":
-                //Coleta o centro eixo x do elemento
-                startX = element.getSize().getWidth();
-                //Coleta a altura do elemento
-                startY = element.getCenter().getY();
-
-                //Calcula o ponto final do eixo X: largura - percentil do elemento
-                endX = screenWidth - (int) (screenWidth * endXPercen);
-                endY = startY;
-                action = "LEFT";
-                break;
-
-            default:
-                //Coleta o centro eixo x do elemento
-                startX = element.getCenter().getX();
-                //Coleta a altura do elemento
-                startY = element.getLocation().getY();
-
-                endX = startX;
-
-                //Calcula o ponto final do eixo X: baseando-se na altura da tela x percentil
-                endY = (int) (screenHeight * endXPercen);
-                action = "DOWN";
-                break;
-        }
-
-        //Ponto de inicio
-        Point startPoint = new Point(startX, startY);
-        PointOption startPointOption = new PointOption().withCoordinates(startPoint);
-
-        //Ponto de final
-        Point endPoint = new Point(endX, endY);
-        PointOption endPointOption = new PointOption().withCoordinates(endPoint);
-
-        WaitOptions waitOptions = new WaitOptions().withDuration(ofMillis(500));
-
-        //Ação
-        TouchAction actions = new TouchAction(driver);
-        actions.press(startPointOption).waitAction(waitOptions).moveTo(endPointOption).waitAction().release().perform();
-    }
 
     //By locator
 
@@ -314,12 +273,16 @@ public class PageBase {
         waitForElement(locator).clear();
     }
 
+    protected void sendKeysBoard(String texto) {
+        driver.getKeyboard().sendKeys(texto);
+
+    }
     protected void sendKeys(By locator, String text) {
         waitForElement(locator).sendKeys(text);
     }
 
     protected void clicarEmEnter() {
-        ((AndroidDriver) driver).getKeyboard().pressKey(Keys.ENTER);
+        ((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.ENTER));
     }
 
     protected String getText(By locator) {
@@ -393,17 +356,6 @@ public class PageBase {
         actions.press(PointOption.point(startX, startY))
                 .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(seconds)))
                 .moveTo(PointOption.point(endX, endY)).release().perform();
-    }
-
-
-    protected void scrollUsingTouchActions(MobileElement gestureField, MobileElement gestureField2) {
-
-        Coordinates points = gestureField.getCoordinates();
-        Coordinates points2 = gestureField2.getCoordinates();
-        TouchAction actions = new TouchAction(driver);
-        actions.press(PointOption.point(points.onPage().getX(), points.onPage().getY()))
-                .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(2)))
-                .moveTo(PointOption.point(points2.onPage().getX(), points2.onPage().getY())).release().perform();
     }
 
     public void scrollTexto(By gesture) {

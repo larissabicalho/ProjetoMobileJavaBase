@@ -16,7 +16,7 @@ public class LocalWebViewSteps {
 
     @And("verificar texto Principal")
     public void verificarTextoPrincipal() {
-        Assert.assertEquals(localWebViewScreen.verificarTexto(),"Hello! Seattle Washington");
+        Assert.assertEquals(localWebViewScreen.verificarTexto(),"Seattle");
         getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
     }
 
@@ -32,9 +32,9 @@ public class LocalWebViewSteps {
         getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
     }
 
-    @And("verificar texto con nome (.*) e lastName (.*)")
-    public void verificarTexto(String name, String lastName) {
-        Assert.assertEquals(localWebViewScreen.verificarTexto(),"Hello! "+name+" "+lastName+"");
+    @And("verificar texto con nome (.*)")
+    public void verificarTexto(String name) {
+        Assert.assertEquals(localWebViewScreen.verificarTexto(),name);
         getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
     }
 }

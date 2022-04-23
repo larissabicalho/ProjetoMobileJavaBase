@@ -32,7 +32,7 @@ public class PullToRefreshSteps {
 
     @Then("verificar hora atual aparecendo")
     public void verificarHoraAtual(){
-        Assert.assertTrue(pullToRefreshScreen.verificarSeExisteHora());
+        Assert.assertNotNull(pullToRefreshScreen.verificarSeExisteHora());
         getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
     }
 

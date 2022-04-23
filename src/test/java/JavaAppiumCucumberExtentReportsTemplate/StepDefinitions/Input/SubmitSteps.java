@@ -18,7 +18,7 @@ public class SubmitSteps {
 
     SubmitScreen submitScreen;
 
-    public SubmitSteps(){submitScreen = new SubmitScreen();}
+    public SubmitSteps(){ submitScreen = new SubmitScreen();}
 
 
     @And("clicar no menu Submit")
@@ -29,6 +29,7 @@ public class SubmitSteps {
 
     @Then("clicar no submit Toast e validar Mensagem")
     public void clicarSubmit() throws TesseractException, IOException {
+
         ReadToastMessage rdm = new ReadToastMessage();
 
         String msgEsperada = "Submitted";

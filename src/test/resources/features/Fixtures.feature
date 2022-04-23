@@ -1,45 +1,46 @@
-Feature: Home App
+Feature: Fixtures
 
   @app
-  Scenario: Acessa Home
+  Scenario: Long Text
     When clicar no menu lateral
     And clicar no menu Fixtures
     Then verificar Long
 
   @app
-  Scenario: Acessa Home
+  Scenario: Lat Text
     When clicar no menu lateral
     And clicar no menu Fixtures
     Then verificar Lat
 
   @app
-  Scenario: Acessa Home
+  Scenario: Wifi Text
     When clicar no menu lateral
     And clicar no menu Fixtures
     Then verificar Wifi
 
+    #não rodar browserstack e no emulador
   @app
-  Scenario: Acessa Home
+  Scenario: Blu true
     When clicar no menu lateral
     And clicar no menu Fixtures Blu
     Then verificar Blu True
 
 
   @app
-  Scenario: Acessa Home
+  Scenario: Blu off
     When clicar no menu lateral
     And clicar no menu Fixtures
     Then verificar Blu False
 
   @app
-  Scenario: Acessa Home
+  Scenario: GPS Text
     When clicar no menu lateral
     And clicar no menu Fixtures
     Then verificar GPS
 
 
   @app
-  Scenario: Acessa Home
+  Scenario: NFC Text
     When clicar no menu lateral
     And clicar no menu Fixtures
     Then verificar NFC

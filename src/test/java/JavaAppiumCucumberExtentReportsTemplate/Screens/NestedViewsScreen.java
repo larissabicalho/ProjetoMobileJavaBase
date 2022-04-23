@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 
 public class NestedViewsScreen extends PageBase {
 
-    By backButton = By.xpath("//android.widget.ImageButton[@content-desc='Navegar para cima']");
+    By backButton = By.xpath("//android.widget.ImageButton");
     By textoAcima = By.id("com.amazonaws.devicefarm.android.referenceapp:id/up_navigation_content_text");
     By upButton = By.id("com.amazonaws.devicefarm.android.referenceapp:id/nested_up_button");
     By nextLevelButton = By.id("com.amazonaws.devicefarm.android.referenceapp:id/nested_up_button");

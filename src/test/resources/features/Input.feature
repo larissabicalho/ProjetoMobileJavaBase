@@ -1,7 +1,6 @@
-Feature: Home App
-
+Feature: Input
   @app
-  Scenario Outline: Acessa Home
+  Scenario Outline: Text Field
     When clicar no menu lateral
     And clicar no menu Input
     And escrever Texto <texto>
@@ -17,7 +16,7 @@ Feature: Home App
       |Texto 7|
 
   @app
-  Scenario: Acessa Home
+  Scenario: Checkbox
     When clicar no menu lateral
     And clicar no menu Input
     And clicar no menu Checkbox
@@ -26,7 +25,7 @@ Feature: Home App
 
 
   @app
-  Scenario Outline: Acessa Home
+  Scenario Outline: Radio
     When clicar no menu lateral
     And clicar no menu Input
     And clicar no menu RadioButton
@@ -39,9 +38,8 @@ Feature: Home App
       |Web|
       |Services|
 
-
   @app
-  Scenario: Acessa Home
+  Scenario: Toggle
     When clicar no menu lateral
     And clicar no menu Input
     And clicar no menu ToggleButton
@@ -50,7 +48,7 @@ Feature: Home App
 
 
   @app
-  Scenario Outline: Acessa Home
+  Scenario Outline: Spinner
     When clicar no menu lateral
     And clicar no menu Input
     And clicar no menu Spinner
@@ -66,7 +64,7 @@ Feature: Home App
       |option 6|
 
   @app
-  Scenario: Acessa Home
+  Scenario: Pull to Refresh
     When clicar no menu lateral
     And clicar no menu Input
     And clicar no menu PullToRefresh
@@ -75,7 +73,7 @@ Feature: Home App
 
 
   @app
-  Scenario Outline: Acessa Home
+  Scenario Outline: Time Picker
     When clicar no menu lateral
     And clicar no menu Input
     And clicar no menu TimePickerScreen
@@ -93,7 +91,7 @@ Feature: Home App
 
 
   @app
-  Scenario Outline: Acessa Home
+  Scenario Outline: Date Picker
     When clicar no menu lateral
     And clicar no menu Input
     And clicar no menu DatePickerScreen
@@ -106,14 +104,14 @@ Feature: Home App
       |22 |
 
   @app
-  Scenario: Acessa Home
+  Scenario: Submit
     When clicar no menu lateral
     And clicar no menu Input
     And clicar no menu Submit
     Then clicar no submit Toast e validar Mensagem
 
   @app
-  Scenario Outline: Acessa Home
+  Scenario Outline: Gestures Long Press
     When clicar no menu lateral
     And clicar no menu Input
     And clicar no menu Gestures
@@ -124,7 +122,7 @@ Feature: Home App
     |Long Press|
 
   @app
-  Scenario Outline: Acessa Home
+  Scenario Outline: Gestures Single Tap
     When clicar no menu lateral
     And clicar no menu Input
     And clicar no menu Gestures
@@ -134,8 +132,9 @@ Feature: Home App
       |acao|
       |Single tap confirmed|
 
+    #não rodar browserstack
   @app
-  Scenario Outline: Acessa Home
+  Scenario Outline: Gestures Double Tap
     When clicar no menu lateral
     And clicar no menu Input
     And clicar no menu Gestures
@@ -146,7 +145,7 @@ Feature: Home App
       |Event within double tap|
 
   @app
-  Scenario Outline: Acessa Home
+  Scenario Outline: Gestures Scroll
     When clicar no menu lateral
     And clicar no menu Input
     And clicar no menu Gestures
@@ -157,7 +156,7 @@ Feature: Home App
       |Scroll|
 
   @app
-  Scenario Outline: Acessa Home
+  Scenario Outline: Gestures Fling
     When clicar no menu lateral
     And clicar no menu Input
     And clicar no menu Gestures

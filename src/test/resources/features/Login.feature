@@ -1,14 +1,14 @@
-Feature: Home App
+Feature: Login
 
   @app
-  Scenario: Acessa Home
+  Scenario: Login Adm
     When clicar no menu lateral
     And clicar no menu Login
     And efetuar o login
     Then verificar Login Admin
 
   @app
-  Scenario: Acessa Home
+  Scenario: Login Errado
     When clicar no menu lateral
     And clicar no menu Login
     And efetuar o login errado
@@ -16,7 +16,7 @@ Feature: Home App
 
 
   @app
-  Scenario: Acessa Home
+  Scenario: Logout
     When clicar no menu lateral
     And clicar no menu Login
     And efetuar o login
@@ -24,7 +24,7 @@ Feature: Home App
     Then verificar tela principal
 
   @app
-  Scenario: Acessa Home
+  Scenario: TryButton
     When clicar no menu lateral
     And clicar no menu Login
     And efetuar o login errado

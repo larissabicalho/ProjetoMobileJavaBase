@@ -1,4 +1,5 @@
-Feature: Acessar app
+Feature: Web
+  #verificar no browserStack
   @app
   Scenario Outline: Verificar Se Acessou o Google
     When clicar no menu lateral

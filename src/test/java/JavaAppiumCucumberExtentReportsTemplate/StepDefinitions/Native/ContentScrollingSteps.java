@@ -18,7 +18,7 @@ public class ContentScrollingSteps {
         contentScrollingScreen = new ContentScrollingScreen();
         contentScrollingScreen.clicarMenuScrooling();
         contentScrollingScreen.scroolAteFinalDoTexto(value);
-       // getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
+        getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");
     }
 
     @Then("texto final aparece")

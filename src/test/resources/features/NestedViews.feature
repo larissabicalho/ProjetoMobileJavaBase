@@ -1,7 +1,7 @@
-Feature: Home App
+Feature: Nested View
 
   @app
-  Scenario: Acessar Home Texto Inválido
+  Scenario: Final Level
     When clicar no menu lateral
     And clicar no menu Nested Views
     And clicar no Up Navigation
@@ -9,7 +9,7 @@ Feature: Home App
     Then verificar Final Level
 
   @app
-  Scenario Outline: Verificar ContentScrolling
+  Scenario Outline: Quantidade de Levels
 
     When clicar no menu lateral
     And clicar no menu Nested Views
@@ -25,7 +25,7 @@ Feature: Home App
       |4 |
 
   @app
-  Scenario: Verificar ContentScrolling
+  Scenario: Verificar Menu Inicial Back Navigation
 
     When clicar no menu lateral
     And clicar no menu Nested Views
@@ -34,7 +34,7 @@ Feature: Home App
     Then verificar se voltou para inicial
 
   @app
-  Scenario: Verificar ContentScrolling
+  Scenario: Verificar Menu Inicial Up Navigation
 
     When clicar no menu lateral
     And clicar no menu Nested Views
