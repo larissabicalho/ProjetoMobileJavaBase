@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Testng Cucumber Suite" parallel="tests">
-    <test name="Run All Tests">
+    <test name="Run All Tests" thread-count="2">
         <classes>
             <class name="JavaAppiumCucumberExtentReportsTemplate.Tests.AlertsTests"></class>
             <class name="JavaAppiumCucumberExtentReportsTemplate.Tests.CrashTests"></class>
