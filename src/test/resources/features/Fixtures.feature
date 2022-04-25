@@ -19,7 +19,7 @@ Feature: Fixtures
     Then verificar Wifi
 
     #não rodar browserstack e no emulador
-  @app
+  @somenteDevice
   Scenario: Blu true
     When clicar no menu lateral
     And clicar no menu Fixtures Blu

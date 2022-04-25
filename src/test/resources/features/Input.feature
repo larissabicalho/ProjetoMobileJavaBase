@@ -133,7 +133,7 @@ Feature: Input
       |Single tap confirmed|
 
     #não rodar browserstack
-  @app
+  @naoRodarBrowserStack
   Scenario Outline: Gestures Double Tap
     When clicar no menu lateral
     And clicar no menu Input

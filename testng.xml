@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Testng Cucumber Suite" parallel="tests">
+    <test name="Run All Tests">
+        <classes>
+            <class name="JavaAppiumCucumberExtentReportsTemplate.Tests.AlertsTests"></class>
+            <class name="JavaAppiumCucumberExtentReportsTemplate.Tests.CrashTests"></class>
+            <class name="JavaAppiumCucumberExtentReportsTemplate.Tests.FixturesTests"></class>
+            <class name="JavaAppiumCucumberExtentReportsTemplate.Tests.HomeTests"></class>
+            <class name="JavaAppiumCucumberExtentReportsTemplate.Tests.InputTests"></class>
+            <class name="JavaAppiumCucumberExtentReportsTemplate.Tests.LocalWebViewTests"></class>
+            <class name="JavaAppiumCucumberExtentReportsTemplate.Tests.LoginTests"></class>
+            <class name="JavaAppiumCucumberExtentReportsTemplate.Tests.NativeTests"></class>
+            <class name="JavaAppiumCucumberExtentReportsTemplate.Tests.NestedViewsTests"></class>
+            <class name="JavaAppiumCucumberExtentReportsTemplate.Tests.WebTests"></class>
+            <!-- <class name="main.AnotherRunner"></class> This class could be used to run multiple runner classes-->
+        </classes>
+
+    </test> <!-- Test -->
+</suite>

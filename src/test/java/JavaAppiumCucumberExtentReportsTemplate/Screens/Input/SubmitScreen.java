@@ -25,9 +25,9 @@ public class SubmitScreen extends PageBase {
 
     public String elementoToastSubmit() throws TesseractException, IOException {
         readToastMessage = new ReadToastMessage();
-        click(submitButton);
-        click(submitButton); // precisei clicar duas vezes p funcionar
-        String result = readToastMessage.readToastMessage();
-        return result;
+        while (!readToastMessage.readToastMessage().contains("Submitted"))
+          click(submitButton);
+       // click(submitButton);// precisei clicar duas vezes p funcionar
+        return readToastMessage.readToastMessage();
     }
 }

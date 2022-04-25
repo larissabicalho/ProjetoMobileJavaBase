@@ -36,6 +36,8 @@ public class SubmitSteps {
 
         String msgRetornada = submitScreen.elementoToastSubmit();
 
+        System.out.println(msgEsperada);
+
         Assert.assertTrue(msgRetornada.contains(msgEsperada));
 
         getScenario().embed(((TakesScreenshot) DriverFactory.driver).getScreenshotAs(OutputType.BYTES), "image/png");

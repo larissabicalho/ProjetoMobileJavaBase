@@ -31,6 +31,7 @@ public class ReadToastMessage extends PageBase {
         String result = null;
         File imageFile = new File(scrShotDirPath, imgName);
         ITesseract instance = new Tesseract();
+        instance.setTessVariable("user_defined_dpi","70");
 
         File tessDataFolder = LoadLibs.extractTessResources("tessdata");
         instance.setDatapath(tessDataFolder.getAbsolutePath());

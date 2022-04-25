@@ -7,6 +7,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(plugin = {
         "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" },
         features = "src/test/resources/features/Input.feature",
+        tags= "@app, ~@somenteDevice",
         glue = {"JavaAppiumCucumberExtentReportsTemplate/StepDefinitions/","JavaAppiumCucumberExtentReportsTemplate.Hooks"}
 
 )
