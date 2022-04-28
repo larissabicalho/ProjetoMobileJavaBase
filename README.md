@@ -109,12 +109,14 @@ Após a instalação dos itens anteriores, é necessário configurar as variáve
 
 
 ⦁	Na variável já existente PATH, inclua os demais valores:
-⦁	%ANDROID_HOME%\platforms
+```
+ ⦁ %ANDROID_HOME%\platforms
 ⦁	%JAVA_HOME%\bin
 ⦁	%ANDROID_HOME%\tools
 ⦁	%ANDROID_HOME%\platform-tools
 ⦁	%ANDROID_HOME%\tools\bin
 ⦁	%ANDROID_HOME%\emulator
+  ```
 
 
 
@@ -127,16 +129,21 @@ Para realizar um diagnóstico se está tudo configurado corretamente vamos usar 
 
 
  E caso a análise de dependência retorne algum erro, o item ficará com o símbolo em vermelho e uma sugestão para resolver o problema será apresentada. Abaixo um caso onde todo o diagnóstico foi feito com sucesso
+ 
+ ## Configurações Device ##
+ 
+## Appium Inspector ##
 
-**Appium**
-
-**Appium Inspector**
-
-**Configuração**
 
 **Mapeamento de Elementos**
+
 
 **BrowserStack**
 
 **Upload apk**
 **Definições do Projeto**
+**Executar Projeto**
+- Achar os packages
+- Device Real 
+- Emulador
+- Browserstack
