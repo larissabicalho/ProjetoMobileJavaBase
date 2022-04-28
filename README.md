@@ -11,7 +11,8 @@ O sistema alvo é o AWS DEVICE FARM.
 👉 Execução Parelela de Testes no Device Real e No Emulador
 👉 Execução Parelela de Testes no BrowserStack
 
-![escritas](https://user-images.githubusercontent.com/22267601/165763649-b4d0fd73-e508-480e-aa72-480b1bf4cccb.png)
+
+![escritas](https://user-images.githubusercontent.com/22267601/165765039-3ff0dcb6-57da-40e5-809d-f2a399d96dd2.png)
 
 
 
