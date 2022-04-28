@@ -34,6 +34,6 @@ BDD - Cucumber 4.8.1
 **Mapeamento de Elementos**
 
 **BrowserStack**
-**Configuração**
+
 **Upload apk**
 **Definições do Projeto**
