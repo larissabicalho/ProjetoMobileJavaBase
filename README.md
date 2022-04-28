@@ -3,7 +3,7 @@
 
 Este projeto foi criado com o intuito de fornecer aplicativo para automação de testes.
 
-O sistema alvo é o AWS DEVICE FARM.
+O sistema alvo é o <b>AWS DEVICE FARM</b>
 
 👉 Desenvolvimento de Features utilizando a linguagem Gherkin atráves do Cucumber </br>
 👉 Desenvolvimento de testes unitários para validação de funcionalides básicas
@@ -71,40 +71,60 @@ O sistema alvo é o AWS DEVICE FARM.
 
 ![setupescritas](https://user-images.githubusercontent.com/22267601/165795825-cb43061e-1086-49d3-9d8c-9a5fbf2b211f.png)
 
- ## Configurações Appium
+ ## Instalações
+<ul>
+  <li><b> Linguagem - Java 8 </b></a></li>
+  <li><a href="https://github.com/appium/appium-desktop/releases">Appium Desktop</a> </li>
+  <li><a href="https://nodejs.org/en/download/"> Node.js </a> </li>
+  <li><b> Abra um terminal  </b></li>
+    <b>Execute o comando: </b> 
+  
+   ```
+      npm install -g appium  
+   ```
+  <li><b><a href="https://developer.android.com/studio?gclid=CjwKCAjw9qiTBhBbEiwApGE0VYny4bpmDm4qTUgZlJBSEzAoo9dWUIGS72_47baqLRJRIwqOfrU2RoC2m8QAvD_BwE&gclsrc=aw.ds"> Android Studio </a> </b></a></li>
+ 
+ <li><b> Instalar SDK </b></a></li>
+</ul>
 
+ ## Sdk Via Android Studio
+ 
+ Ao abrir o Android Studio pela primeira vez, será aberta a janela para um novo projeto do Android Studio. Clique no botão SDK Manager (Gerenciador do SDK) 
+ 
+ ![android-sdk-9- primeira](https://user-images.githubusercontent.com/22267601/165809447-cf3b6089-7b30-4a28-b024-553f3a6b01fe.jpg)
+ 
+ Aparecerá a janela do SDK Manager, onde você pode selecionar os pacotes de plataformas que você quer baixar.
+ 
+ ![segunda](https://user-images.githubusercontent.com/22267601/165810278-abbd20c7-5295-4927-85c6-f122bea45a80.jpg)
+ 
+ Aperte “OK”, e o Android SDK estará instalado e configurado.
+ 
+ ##	Instalar  Appium	Doctor ##
+ 
+  <li><b> Abra um terminal  </b></li>
+    <b>Execute o comando: </b> 
+  
+   ```
+       npm install -g appium-doctor  
+   ```
 
-Instalar⦁	 ⦁	Java⦁	 ⦁	8⦁	 ⦁	(Java⦁	 ⦁	JDK⦁	 ⦁	-⦁	 ⦁	build⦁	 ⦁	1.8.0_241-b07)
-Instalar⦁	 ⦁	Appium⦁	 ⦁	Desktop
-Instalar⦁	 ⦁	Node
-⦁	Instalar Appium NPM
-⦁	Abra um terminal
-⦁	Execute o comando: npm install -g appium
-Instalar⦁	 ⦁	SDK⦁	 ⦁	Android
-Baixar⦁	 ⦁	SDK⦁	 ⦁	Tools
-⦁	Ir até Android Studio package
-⦁	Baixar o Android SDK via zip
-⦁	Extrair arquivos
-⦁	Colar arquivos na pasta Tools: (C:\Users\NOMEUSUARIO\AppData\Local\Android\Sdk\tools)
-⦁	Instalar ⦁	Appium⦁	 ⦁	Doctor
-⦁	Abra um terminal
-⦁	Execute o comando: npm install -g appium-doctor
-
-
-Configurações de variáveis de ambiente
-
+## Configurações de variáveis de ambiente ##
 
 Após a instalação dos itens anteriores, é necessário configurar as variáveis de ambiente, para isso:
 
-⦁	Acesse o menu INICIAR do Windows
-⦁	Pesquise por “editar as variáveis de ambiente do sistema”
-⦁	Clique em Variáveis de Ambiente…
-⦁	Na tabela Variáveis do sistema clique em Novo
-⦁	Inclua as seguintes variáveis:
-⦁	JAVA_HOME - C:\Program Files (x86)\Java\SEU_JDK
-⦁	ANDROID_HOME - C:\Users\NOMEUSUARIO\AppData\Local\Android\Sdk
-⦁	ANDROID_SDK_ROOT - C:\Users\NOMEUSUARIO\AppData\Local\Android\Sdk
-
+<ul>
+  <li><b>Acesse o menu INICIAR do Windows</b></a></li>
+  <li><b>Pesquise por "editar as variáveis de ambiente do sistema"</b></a></li>
+  <li><b>Clique em Variáveis de Ambiente</b></a></li>
+  <li><b>Na tabela Variáveis do sistema clique em Novo</b></a></li>
+  <li><b> Inclua as seguintes variáveis:
+  ```
+     JAVA_HOME - C:\Program Files (x86)\Java\SEU_JDK
+     ANDROID_HOME - C:\Users\NOMEUSUARIO\AppData\Local\Android\Sdk
+     ANDROID_SDK_ROOT - C:\Users\NOMEUSUARIO\AppData\Local\Android\Sdk
+  ```
+ </b></a></li>
+</ul>
  
 
 
