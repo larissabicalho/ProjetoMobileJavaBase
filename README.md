@@ -114,43 +114,53 @@ Após a instalação dos itens anteriores, é necessário configurar as variáve
 
 <ul>
   <li><b>Acesse o menu INICIAR do Windows</b></a></li>
-  <li><b>Pesquise por "editar as variáveis de ambiente do sistema"</b></a></li>
-  <li><b>Clique em Variáveis de Ambiente</b></a></li>
-  <li><b>Na tabela Variáveis do sistema clique em Novo</b></a></li>
-  <li><b> Inclua as seguintes variáveis:
+  <li><b>Pesquise por "editar as variáveis de ambiente do sistema"</b></li>
+  <li><b>Clique em Variáveis de Ambiente</b></li>
+  <li><b>Na tabela Variáveis do sistema clique em Novo</b></li>
+  <li><b>Inclua as seguintes variáveis:</b> </li>
+  <li><b> Abra um terminal  </b></li>
+    <b>Execute o comando: </b> 
+    
   ```
      JAVA_HOME - C:\Program Files (x86)\Java\SEU_JDK
      ANDROID_HOME - C:\Users\NOMEUSUARIO\AppData\Local\Android\Sdk
      ANDROID_SDK_ROOT - C:\Users\NOMEUSUARIO\AppData\Local\Android\Sdk
   ```
- </b></a></li>
-</ul>
- 
+  
+  ![ambiente](https://user-images.githubusercontent.com/22267601/165814822-d168d8ef-3854-4fd2-9000-c26c1f30cf52.png)
+  
+  <li><b>Na variável já existente PATH, inclua os demais valores:</b></li>
 
 
-⦁	Na variável já existente PATH, inclua os demais valores:
 ```
- ⦁ %ANDROID_HOME%\platforms
-⦁	%JAVA_HOME%\bin
-⦁	%ANDROID_HOME%\tools
-⦁	%ANDROID_HOME%\platform-tools
-⦁	%ANDROID_HOME%\tools\bin
-⦁	%ANDROID_HOME%\emulator
-  ```
+    %ANDROID_HOME%\platforms
+    %JAVA_HOME%\bin
+    %ANDROID_HOME%\tools
+    %ANDROID_HOME%\platform-tools
+  	%ANDROID_HOME%\tools\bin
+   	%ANDROID_HOME%\emulator
+ 
+```
+  
+  ![ambiente2](https://user-images.githubusercontent.com/22267601/165815116-7f84b57a-f0cd-403f-a704-11ef861bd249.png)
+  
+</ul>
 
-
-
-Como saber se está tudo funcionando?
+<b> Como saber se está tudo funcionando? </b>
 
 Para realizar um diagnóstico se está tudo configurado corretamente vamos usar o appium-doctor. Appium-doctor tem os parâmetros android e ios para que você se as configurações estão corretas para o uso de cada tipo de sistema operacional, para isso:
+<b> Abra um terminal  </b>
+    <b>Execute o comando: </b> 
+    
+  ```
+    appium-doctor --android
+  ```
 
-⦁	Abra um terminal
-⦁	Execute o comando: appium-doctor --android
-
-
- E caso a análise de dependência retorne algum erro, o item ficará com o símbolo em vermelho e uma sugestão para resolver o problema será apresentada. Abaixo um caso onde todo o diagnóstico foi feito com sucesso
+ E caso a análise de dependência retorne algum erro, o item ficará com o símbolo em vermelho e uma sugestão para resolver o problema será apresentada.
  
- ## Configurações Device ##
+![ambiente3](https://user-images.githubusercontent.com/22267601/165815591-6ead15e2-594b-45ed-8395-02573babdd09.png)
+ 
+![deviceReal](https://user-images.githubusercontent.com/22267601/165816174-f0e6c7fa-b4c0-43a4-a00a-57c159be360b.png)
  
 ## Appium Inspector ##
 
