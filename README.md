@@ -69,7 +69,64 @@ O sistema alvo é o AWS DEVICE FARM.
   <li><b> BDD - Cucumber 4.8.1 </b></a></li>
 </ul>
 
-**Setup**
+![setupescritas](https://user-images.githubusercontent.com/22267601/165795825-cb43061e-1086-49d3-9d8c-9a5fbf2b211f.png)
+
+ ## Configurações Appium
+
+
+Instalar⦁	 ⦁	Java⦁	 ⦁	8⦁	 ⦁	(Java⦁	 ⦁	JDK⦁	 ⦁	-⦁	 ⦁	build⦁	 ⦁	1.8.0_241-b07)
+Instalar⦁	 ⦁	Appium⦁	 ⦁	Desktop
+Instalar⦁	 ⦁	Node
+⦁	Instalar Appium NPM
+⦁	Abra um terminal
+⦁	Execute o comando: npm install -g appium
+Instalar⦁	 ⦁	SDK⦁	 ⦁	Android
+Baixar⦁	 ⦁	SDK⦁	 ⦁	Tools
+⦁	Ir até Android Studio package
+⦁	Baixar o Android SDK via zip
+⦁	Extrair arquivos
+⦁	Colar arquivos na pasta Tools: (C:\Users\NOMEUSUARIO\AppData\Local\Android\Sdk\tools)
+⦁	Instalar ⦁	Appium⦁	 ⦁	Doctor
+⦁	Abra um terminal
+⦁	Execute o comando: npm install -g appium-doctor
+
+
+Configurações de variáveis de ambiente
+
+
+Após a instalação dos itens anteriores, é necessário configurar as variáveis de ambiente, para isso:
+
+⦁	Acesse o menu INICIAR do Windows
+⦁	Pesquise por “editar as variáveis de ambiente do sistema”
+⦁	Clique em Variáveis de Ambiente…
+⦁	Na tabela Variáveis do sistema clique em Novo
+⦁	Inclua as seguintes variáveis:
+⦁	JAVA_HOME - C:\Program Files (x86)\Java\SEU_JDK
+⦁	ANDROID_HOME - C:\Users\NOMEUSUARIO\AppData\Local\Android\Sdk
+⦁	ANDROID_SDK_ROOT - C:\Users\NOMEUSUARIO\AppData\Local\Android\Sdk
+
+ 
+
+
+⦁	Na variável já existente PATH, inclua os demais valores:
+⦁	%ANDROID_HOME%\platforms
+⦁	%JAVA_HOME%\bin
+⦁	%ANDROID_HOME%\tools
+⦁	%ANDROID_HOME%\platform-tools
+⦁	%ANDROID_HOME%\tools\bin
+⦁	%ANDROID_HOME%\emulator
+
+
+
+Como saber se está tudo funcionando?
+
+Para realizar um diagnóstico se está tudo configurado corretamente vamos usar o appium-doctor. Appium-doctor tem os parâmetros android e ios para que você se as configurações estão corretas para o uso de cada tipo de sistema operacional, para isso:
+
+⦁	Abra um terminal
+⦁	Execute o comando: appium-doctor --android
+
+
+ E caso a análise de dependência retorne algum erro, o item ficará com o símbolo em vermelho e uma sugestão para resolver o problema será apresentada. Abaixo um caso onde todo o diagnóstico foi feito com sucesso
 
 **Appium**
 
