@@ -127,7 +127,7 @@ Após a instalação dos itens anteriores, é necessário configurar as variáve
      ANDROID_SDK_ROOT - C:\Users\NOMEUSUARIO\AppData\Local\Android\Sdk
   ```
   
-  ![ambiente](https://user-images.githubusercontent.com/22267601/165814822-d168d8ef-3854-4fd2-9000-c26c1f30cf52.png)
+  ![ambiente](https://user-images.githubusercontent.com/22267601/165965711-0f79080b-fa72-4be4-9af2-68616a7d4333.png)
   
   <li><b>Na variável já existente PATH, inclua os demais valores:</b></li>
 
