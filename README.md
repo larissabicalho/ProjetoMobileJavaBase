@@ -113,7 +113,7 @@ O sistema alvo é o <b>AWS DEVICE FARM</b>
 Após a instalação dos itens anteriores, é necessário configurar as variáveis de ambiente, para isso:
 
 <ul>
-  <li><b>Acesse o menu INICIAR do Windows</b></a></li>
+  <li><b>Acesse o menu INICIAR do Windows</b></li>
   <li><b>Pesquise por "editar as variáveis de ambiente do sistema"</b></li>
   <li><b>Clique em Variáveis de Ambiente</b></li>
   <li><b>Na tabela Variáveis do sistema clique em Novo</b></li>
@@ -161,12 +161,73 @@ Para realizar um diagnóstico se está tudo configurado corretamente vamos usar 
 ![ambiente3](https://user-images.githubusercontent.com/22267601/165815591-6ead15e2-594b-45ed-8395-02573babdd09.png)
  
 ![deviceReal](https://user-images.githubusercontent.com/22267601/165816174-f0e6c7fa-b4c0-43a4-a00a-57c159be360b.png)
+ Para executar o teste em um device real é necessário alguns passos </br>
  
-## Appium Inspector ##
+ #### Habilitar o Modo Desenvolvedor  ####
+  
+   1. Abra o menu de "Configurações" do seu celular, role a aba até o final e clique em "Sobre o telefone".
+  
+  ![Sem título](https://user-images.githubusercontent.com/22267601/165866592-42d597ae-141d-48ca-9868-55d5b65ce6fe.png)
+  
+  
+   2. Role a aba seguinte até o final e clique várias vezes sobre o item "Número da versão" até que a mensagem "Você agora é um desenvolvedor" seja exibida.
+  
+  ![Sem título2](https://user-images.githubusercontent.com/22267601/165867039-b0aa71c2-b06c-4f31-894b-ac263aab7fdd.png)
+
+   3. Acessando a aba "Sistema", é possível encontrar o item "Opções do desenvolvedor".
+  
+  ![i399015](https://user-images.githubusercontent.com/22267601/165867124-f68590c6-5513-45d7-955d-3d019681af15.jpeg)
+  
+  #### Habilitar Depuração USB  ####
+  
+   1. Já com o modo desenvolvedor ativado, acesse as configurações do sistema e toque em "Programador".
+    ![2022-04-28 21_18_29-print-2018-06-15-15-37-19-6f3bc jpg (984×874)](https://user-images.githubusercontent.com/22267601/165867540-6918ae9e-8922-4cd1-8418-9b0bc598e575.png)
+   2. Role a tela até a seção "Depuração" e habilite a opção "Depuração USB". Em seguida, toque em "OK" para confirmar.
+  
+  ![2022-04-28 21_20_11-print-2018-06-15-15-37-30-ts50x jpg (984×874)](https://user-images.githubusercontent.com/22267601/165867654-b45ef533-d13c-44a2-9161-e7b38255b18a.png)
+  
+  <b> Então o modo depurador será ativado </b>
+  
+  
+![2022-04-28 21_21_24-print-2018-06-15-15-37-48-gdct1 jpg (984×874)](https://user-images.githubusercontent.com/22267601/165867747-0b8c9aff-7af0-4246-87ca-4b08273ac3b9.png)
+  
+![emulador](https://user-images.githubusercontent.com/22267601/165867968-6489c6da-6003-4241-a8da-3ba63d717e68.png)
+Executar os testes com Emulador 
+
+1. Utilizando o prompt do Windows vá até a pasta onde se encontra o sdk é encontre o emulador é digite o seguinte comando conforme a imagem: </br>
+
+![2022-04-28 21_27_01-Prompt de Comando](https://user-images.githubusercontent.com/22267601/165868287-7f42153d-da27-4b89-bab5-bb75962d8e09.png)
+
+2. Execute o Emulador escolhido da seguinte forma:
+![2022_04_28_21_31_49_Prompt_de_Comando_emulator_avd_Pixel_3a_API_28x](https://user-images.githubusercontent.com/22267601/165868551-48689334-f6a0-458c-9caf-05c253041ac0.png)
 
 
-**Mapeamento de Elementos**
+![appiuminspector](https://user-images.githubusercontent.com/22267601/165868740-0609872f-8377-4f91-b51c-1857b9c471ea.png)
+Passos para utilizar o Appium Inspector
+1. Abrir Appium Inspector que agora é um componente isolado: </br>
+![abrirappium](https://user-images.githubusercontent.com/22267601/165869125-41a6db09-b3d8-4ecf-b19e-966844c96643.png)
+2. Montar o JSON
+ ```
+  {
+  "platformName": "Android",
+  "platformVersion": "9.0",
+  "app": "pasta apk",
+  "deviceName": "nome do device",
+  "automationName": "uiautomator2"
+  }
 
+  ```
+**PS: Será explicado mais a frente como pegar o nome do device
+
+3. Salvar o Json 
+![2022-04-28 21_46_59-Downloads](https://user-images.githubusercontent.com/22267601/165870225-ad6bc887-62be-4ad9-a5d6-ab03d0f5d816.png)
+
+4. Dar o Start na Seção 
+![2022-04-28 21_57_05-Downloadss](https://user-images.githubusercontent.com/22267601/165870335-f1c6166d-30b1-46f7-9a5e-556ba22a31c1.png)
+
+![appiuminspectormapeamento](https://user-images.githubusercontent.com/22267601/165870502-845e1730-8095-4725-a611-61801fe860b0.png)
+
+Após ser feita a etapa anterior uma nova aba será aberta com a tela do celular e uma árvore como está os elementos da tela, como abaixo:
 
 **BrowserStack**
 
