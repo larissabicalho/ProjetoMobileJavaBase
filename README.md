@@ -133,13 +133,13 @@ Após a instalação dos itens anteriores, é necessário configurar as variáve
 
 
 ```
-    %ANDROID_HOME%\platforms
-    %JAVA_HOME%\bin
-    %ANDROID_HOME%\tools
-    %ANDROID_HOME%\platform-tools
-  	%ANDROID_HOME%\tools\bin
-   	%ANDROID_HOME%\emulator
- 
+     %ANDROID_HOME%\platforms
+     %JAVA_HOME%\bin
+     %ANDROID_HOME%\tools
+     %ANDROID_HOME%\platform-tools
+  	 %ANDROID_HOME%\tools\bin
+     %ANDROID_HOME%\emulator
+
 ```
   
   ![ambiente2](https://user-images.githubusercontent.com/22267601/165815116-7f84b57a-f0cd-403f-a704-11ef861bd249.png)
@@ -158,8 +158,9 @@ Para realizar um diagnóstico se está tudo configurado corretamente vamos usar 
 
  E caso a análise de dependência retorne algum erro, o item ficará com o símbolo em vermelho e uma sugestão para resolver o problema será apresentada.
  
-![ambiente3](https://user-images.githubusercontent.com/22267601/165815591-6ead15e2-594b-45ed-8395-02573babdd09.png)
- 
+![2022-04-29 11_46_30-](https://user-images.githubusercontent.com/22267601/165968299-bc10fb27-8b80-4cfb-b51d-092ffaca01d5.png)
+
+
 ![deviceReal](https://user-images.githubusercontent.com/22267601/165816174-f0e6c7fa-b4c0-43a4-a00a-57c159be360b.png)
  Para executar o teste em um device real é necessário alguns passos </br>
  
@@ -228,13 +229,21 @@ Passos para utilizar o Appium Inspector
 ![appiuminspectormapeamento](https://user-images.githubusercontent.com/22267601/165870502-845e1730-8095-4725-a611-61801fe860b0.png)
 
 Após ser feita a etapa anterior uma nova aba será aberta com a tela do celular e uma árvore como está os elementos da tela, como abaixo:
+![2022-04-29 11_21_01-Appium](https://user-images.githubusercontent.com/22267601/165968998-a9c6848a-7114-4926-818b-7c2508b3e6cb.png)
 
-**BrowserStack**
+ #### Verificar Locator ####
+1. Abrir a Lupa 
+![2022-04-29 11_56_32-Downloads2](https://user-images.githubusercontent.com/22267601/165970320-5abe38bc-3852-452f-a7af-9887b57d85f9.png)
+2.Colocar o Locator 
+![2022-04-29 11_59_01-Downloads3](https://user-images.githubusercontent.com/22267601/165970849-6dffff25-594b-445a-bdcb-3098d10e51fe.png)
+3. Ver se vai encontrar através desse Locator
+![2022-04-29 12_01_30-C__Users_LarissaBicalho_Downloads_2022-04-29 11_46_30- png - Editor de Imagens d](https://user-images.githubusercontent.com/22267601/165971113-81927538-1bb0-4c21-9571-965347478d64.png)
 
-**Upload apk**
-**Definições do Projeto**
+![definicaoprojeto](https://user-images.githubusercontent.com/22267601/165971747-16467fc5-54b8-4188-9d47-1d743f8d511a.png)
+
 **Executar Projeto**
 - Achar os packages
 - Device Real 
 - Emulador
-- Browserstack
+**Browserstack**
+**Upload apk**
