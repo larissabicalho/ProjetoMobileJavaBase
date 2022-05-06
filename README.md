@@ -240,10 +240,57 @@ Após ser feita a etapa anterior uma nova aba será aberta com a tela do celular
 ![2022-04-29 12_01_30-C__Users_LarissaBicalho_Downloads_2022-04-29 11_46_30- png - Editor de Imagens d](https://user-images.githubusercontent.com/22267601/165971113-81927538-1bb0-4c21-9571-965347478d64.png)
 
 ![definicaoprojeto](https://user-images.githubusercontent.com/22267601/165971747-16467fc5-54b8-4188-9d47-1d743f8d511a.png)
+Algumas definições de Implementação do Projeto
 
-**Executar Projeto**
-- Achar os packages
-- Device Real 
-- Emulador
-**Browserstack**
-**Upload apk**
+
+   Mais de 25 casos de teste 
+   Features 
+  ![2022-05-06 17_40_18-Window](https://user-images.githubusercontent.com/22267601/167215306-ff13ac6c-3460-400e-a945-b6aa0f2fb9d8.jpg)
+  Bluetooth - Ligar para que possar ser mostrado como true na Feature Fixtures
+  ![2022-05-06 17_46_19-Window](https://user-images.githubusercontent.com/22267601/167215572-81801191-6e73-4999-bfd5-0879bc474c63.jpg)
+    Data Driven - Exemplo de Data Driven utilizando BDD </li>
+  ![2022-05-06 17_47_00-Window](https://user-images.githubusercontent.com/22267601/167215976-efcef390-2ab8-48fb-a9d9-8c323f5a19d1.jpg)
+  Screen Toast 
+  ![2022-05-06 17_48_00-Window](https://user-images.githubusercontent.com/22267601/167216200-80400e6d-8f08-4456-8327-40dedf908699.jpg)
+   Verificar o Toast
+  ![17-abr-2022__11_41_37PM](https://user-images.githubusercontent.com/22267601/167216473-bfd00896-e701-42fc-be0d-644ed6bedf94.png)
+  Obs : Foi necessário clicar 2 vezes no Submitted
+  ![2022-05-06 18_07_00-ProjetoMobileJavaBase – SubmitScreen](https://user-images.githubusercontent.com/22267601/167216700-5928c334-fb95-48ad-8720-cff6a9861cde.jpg)
+   Screen de uma tela
+  ![embedded4](https://user-images.githubusercontent.com/22267601/167216986-72843378-6e63-4ca9-9a87-3b32061b3682.png)
+fb95-48ad-8720-cff6a9861cde.jpg)
+   Configurações para rodar Device Real, Emulador e Browserstack
+    - É necessário para rodar no Device Real os caso de teste Bluetooth roda apenas no deviceReal
+![2022-05-06 18_13_00-ProjetoMobileJavaBase – FixturesTests](https://user-images.githubusercontent.com/22267601/167217637-c4f46561-1067-48c4-a1d5-f1799feda041.jpg)
+ - É necessário para rodar no Browserstack retirar o teste de Input de Double Click
+ ![2022-05-06 18_19_09-ProjetoMobileJavaBase – InputTests](https://user-images.githubusercontent.com/22267601/167217906-09ece542-7b2e-4517-929e-ef1dc74443e8.jpg)
+    Resultado de um relatório 
+  ![2022-05-06 17_49_16-ctfl_at_sample_A v1 2br](https://user-images.githubusercontent.com/22267601/167218048-fda20b9c-6f73-4c87-96b5-4b119bf34ba3.jpg)
+![executarescritas](https://user-images.githubusercontent.com/22267601/167218496-73bc6ee8-f546-448e-bb95-dd7c80179d13.png)
+## Device Real ##
+Achar deviceName
+![acharDevice](https://user-images.githubusercontent.com/22267601/167219525-6da88cb4-d21a-4155-a3a3-ed4c04f6d784.jpg)
+## Achar os packages ## 
+- Exemplo o PlayStore
+![Sem título](https://user-images.githubusercontent.com/22267601/167219634-04d625ee-4648-485f-b76c-559a3f6c6704.jpg)
+- Abrir o Shell do Device
+![Sem título2](https://user-images.githubusercontent.com/22267601/167219885-83187b24-fd82-4b46-a100-8ae819ec22ed.jpg)
+- Abrir o Aplicativo no device no qual quer o appActivity e o Package e após digitar o seguinte comando:
+![Sem título3](https://user-images.githubusercontent.com/22267601/167220296-4bed3f31-b420-4850-97d2-c45b9bb06d7e.png)
+## Configuração no Intellij para rodar o Device ##
+No global parameters e necessário ajustar as seguintes variáveis:
+![2022-05-06 18_45_14-ProjetoMobileJavaBase – globalParameters properties](https://user-images.githubusercontent.com/22267601/167220624-320a68c2-b7be-4b1c-825c-4221adb239b8.png)
+![2022-05-06 18_44_55-ProjetoMobileJavaBase – globalParameters2](https://user-images.githubusercontent.com/22267601/167220789-8f128dd9-89d8-4621-947f-7b05feba2796.png)
+
+ps: a configuração para um Emulador é a mesma de um deviceReal
+![executarescritas2](https://user-images.githubusercontent.com/22267601/167221029-cdf03edc-3a68-4ae2-9ef0-7e12bc4df1ae.png)
+![2022-05-06 18_56_21-Downloads](https://user-images.githubusercontent.com/22267601/167221514-eb76df9d-3c41-4b7b-a5ee-c21ba10d0ada.jpg)
+- Upload apk
+- ![2022-05-06 18_58_05-Google Pixel 3, 9 0 - BrowserStack App Automate](https://user-images.githubusercontent.com/22267601/167221926-977a6c74-6c5b-493d-889c-1a36cbb29022.png)
+- Abrirá essa nova janela (Para achar o AppAndroidUploadBrowserStack)
+![2022-05-06 19_01_02-Run Appium, Espresso, XCUI tests on a wide range of real Android and iOS devices](https://user-images.githubusercontent.com/22267601/167222191-6d292767-3dda-4f0c-b8f1-04861b2d258c.jpg)
+- Para achar os dados do AcessKey e Username
+![acess](https://user-images.githubusercontent.com/22267601/167222426-39eb0a30-82e0-4062-8932-552c26216e3c.png)
+- Configuração no Intellij
+![2022-05-06 19_09_33-ProjetoMobileJavaBase – globalParameters properties](https://user-images.githubusercontent.com/22267601/167222525-eb155f15-2659-4bcb-8031-2444fc7d01e0.png)
+
