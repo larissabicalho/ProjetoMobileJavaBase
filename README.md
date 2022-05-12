@@ -326,38 +326,66 @@ Para realizar um diagnóstico se está tudo configurado corretamente vamos usar 
        <p align="center">
          <img src="https://user-images.githubusercontent.com/22267601/167216986-72843378-6e63-4ca9-9a87-3b32061b3682.png" width=40% height=20% >
       </p>
-   Configurações para rodar Device Real, Emulador e Browserstack <br>
+      
+   Configurações para rodar Device Real, Emulador e Browserstack <br>     
     - É necessário para rodar no Device Real os caso de teste Bluetooth roda apenas no deviceReal
-![2022-05-06 18_13_00-ProjetoMobileJavaBase – FixturesTests](https://user-images.githubusercontent.com/22267601/167217637-c4f46561-1067-48c4-a1d5-f1799feda041.jpg)
- - É necessário para rodar no Browserstack retirar o teste de Input de Double Click
- ![2022-05-06 18_19_09-ProjetoMobileJavaBase – InputTests](https://user-images.githubusercontent.com/22267601/167217906-09ece542-7b2e-4517-929e-ef1dc74443e8.jpg)
-    Resultado de um relatório 
-  ![2022-05-06 17_49_16-ctfl_at_sample_A v1 2br](https://user-images.githubusercontent.com/22267601/167218048-fda20b9c-6f73-4c87-96b5-4b119bf34ba3.jpg)
+      <p align="center">
+         <img src="https://user-images.githubusercontent.com/22267601/167217637-c4f46561-1067-48c4-a1d5-f1799feda041.jpg" width=100% height=60% >
+      </p>
+     - É necessário para rodar no Browserstack retirar o teste de Input de Double Click
+       <p align="center">
+         <img src="https://user-images.githubusercontent.com/22267601/167217906-09ece542-7b2e-4517-929e-ef1dc74443e8.jpg" width=100% height=40% >
+      </p>
+    - Resultado de um relatório 
+        <p align="center">
+         <img src="https://user-images.githubusercontent.com/22267601/167218048-fda20b9c-6f73-4c87-96b5-4b119bf34ba3.jpg" width=100% height=40% >
+      </p>
 ![executarescritas](https://user-images.githubusercontent.com/22267601/167218496-73bc6ee8-f546-448e-bb95-dd7c80179d13.png)
 ## Device Real ##
-Achar deviceName
-![acharDevice](https://user-images.githubusercontent.com/22267601/167219525-6da88cb4-d21a-4155-a3a3-ed4c04f6d784.jpg)
+- Achar deviceName 
+      <p align="center">
+         <img src="https://user-images.githubusercontent.com/22267601/167219525-6da88cb4-d21a-4155-a3a3-ed4c04f6d784.jpg" width=100% height=40% >
+      </p>
 ## Achar os packages ## 
 - Exemplo o PlayStore
-![Sem título](https://user-images.githubusercontent.com/22267601/167219634-04d625ee-4648-485f-b76c-559a3f6c6704.jpg)
+       <p align="center">
+         <img src="https://user-images.githubusercontent.com/22267601/167219634-04d625ee-4648-485f-b76c-559a3f6c6704.jpg" width=100% height=40% >
+      </p>
 - Abrir o Shell do Device
-![Sem título2](https://user-images.githubusercontent.com/22267601/167219885-83187b24-fd82-4b46-a100-8ae819ec22ed.jpg)
+        <p align="center">
+         <img src="https://user-images.githubusercontent.com/22267601/167219885-83187b24-fd82-4b46-a100-8ae819ec22ed.jpg" width=100% height=40% >
+      </p>
 - Abrir o Aplicativo no device no qual quer o appActivity e o Package e após digitar o seguinte comando:
-![Sem título3](https://user-images.githubusercontent.com/22267601/167220296-4bed3f31-b420-4850-97d2-c45b9bb06d7e.png)
+        <p align="center">
+         <img src="https://user-images.githubusercontent.com/22267601/167220296-4bed3f31-b420-4850-97d2-c45b9bb06d7e.png" width=100% height=40% >
+      </p>
 ## Configuração no Intellij para rodar o Device ##
-No global parameters e necessário ajustar as seguintes variáveis:
-![2022-05-06 18_45_14-ProjetoMobileJavaBase – globalParameters properties](https://user-images.githubusercontent.com/22267601/167220624-320a68c2-b7be-4b1c-825c-4221adb239b8.png)
-![2022-05-06 18_44_55-ProjetoMobileJavaBase – globalParameters2](https://user-images.githubusercontent.com/22267601/167220789-8f128dd9-89d8-4621-947f-7b05feba2796.png)
-
-ps: a configuração para um Emulador é a mesma de um deviceReal
-![executarescritas2](https://user-images.githubusercontent.com/22267601/167221029-cdf03edc-3a68-4ae2-9ef0-7e12bc4df1ae.png)
-![2022-05-06 18_56_21-Downloads](https://user-images.githubusercontent.com/22267601/167221514-eb76df9d-3c41-4b7b-a5ee-c21ba10d0ada.jpg)
-- Upload apk
-- ![2022-05-06 18_58_05-Google Pixel 3, 9 0 - BrowserStack App Automate](https://user-images.githubusercontent.com/22267601/167221926-977a6c74-6c5b-493d-889c-1a36cbb29022.png)
+- No global parameters e necessário ajustar as seguintes variáveis:
+        <p align="center">
+         <img src="https://user-images.githubusercontent.com/22267601/167220624-320a68c2-b7be-4b1c-825c-4221adb239b8.png" width=50% height=40% >
+      </p>
+       <p align="center">
+         <img src="https://user-images.githubusercontent.com/22267601/167220789-8f128dd9-89d8-4621-947f-7b05feba2796.png" width=100% height=40% >
+      </p>
+ps: a configuração para um Emulador é a mesma de um deviceReal 
+      
+![executarescritas2](https://user-images.githubusercontent.com/22267601/167221029-cdf03edc-3a68-4ae2-9ef0-7e12bc4df1ae.png) 
+       <p align="center">
+         <img src="https://user-images.githubusercontent.com/22267601/167221514-eb76df9d-3c41-4b7b-a5ee-c21ba10d0ada.jpg" width=100% height=40% >
+      </p>
+- Upload APK
+       <p align="center">
+         <img src="https://user-images.githubusercontent.com/22267601/167221926-977a6c74-6c5b-493d-889c-1a36cbb29022.png" width=100% height=40% >
+      </p>
 - Abrirá essa nova janela (Para achar o AppAndroidUploadBrowserStack)
-![2022-05-06 19_01_02-Run Appium, Espresso, XCUI tests on a wide range of real Android and iOS devices](https://user-images.githubusercontent.com/22267601/167222191-6d292767-3dda-4f0c-b8f1-04861b2d258c.jpg)
+        <p align="center">
+         <img src="https://user-images.githubusercontent.com/22267601/167222191-6d292767-3dda-4f0c-b8f1-04861b2d258c.jpg" width=80% height=40% >
+      </p>
 - Para achar os dados do AcessKey e Username
-![acess](https://user-images.githubusercontent.com/22267601/167222426-39eb0a30-82e0-4062-8932-552c26216e3c.png)
+         <p align="center">
+         <img src="https://user-images.githubusercontent.com/22267601/167222426-39eb0a30-82e0-4062-8932-552c26216e3c.png" width=100% height=40% >
+      </p>
 - Configuração no Intellij
-![2022-05-06 19_09_33-ProjetoMobileJavaBase – globalParameters properties](https://user-images.githubusercontent.com/22267601/167222525-eb155f15-2659-4bcb-8031-2444fc7d01e0.png)
-
+         <p align="center">
+         <img src="https://user-images.githubusercontent.com/22267601/167222525-eb155f15-2659-4bcb-8031-2444fc7d01e0.png" width=100% height=40% >
+      </p>
