@@ -7,10 +7,11 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(plugin = {
         "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" },
         features = "src/test/resources/features/Input.feature",
-        tags= "@app, ~@somenteDevice",
+        tags= "@app, @naoRodarBrowserStack",
         glue = {"JavaAppiumCucumberExtentReportsTemplate/StepDefinitions/","JavaAppiumCucumberExtentReportsTemplate.Hooks"}
 
 )
 public class InputTests extends AbstractTestNGCucumberTests {
 
 }
+

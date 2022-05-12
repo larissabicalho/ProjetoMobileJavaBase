@@ -27,7 +27,6 @@ public class SubmitScreen extends PageBase {
         readToastMessage = new ReadToastMessage();
         while (!readToastMessage.readToastMessage().contains("Submitted"))
           click(submitButton);
-       // click(submitButton);// precisei clicar duas vezes p funcionar
         return readToastMessage.readToastMessage();
     }
 }
