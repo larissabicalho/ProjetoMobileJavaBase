@@ -1,7 +1,7 @@
 
 ![bannerprojeto](https://user-images.githubusercontent.com/22267601/165681863-3f86f68f-1505-41cb-8125-276e11b40fd0.png)
 
-Este projeto foi criado com o intuito de fornecer aplicativo para automação de testes.
+Este projeto foi criado com o intuito de fornecer aplicativo para automação de testes ANDROID.
 
 O sistema alvo é o <b>AWS DEVICE FARM</b>
 
