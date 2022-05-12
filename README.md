@@ -91,7 +91,10 @@ O sistema alvo é o <b>AWS DEVICE FARM</b>
  
  Ao abrir o Android Studio pela primeira vez, será aberta a janela para um novo projeto do Android Studio. Clique no botão SDK Manager (Gerenciador do SDK) 
  
- ![android-sdk-9- primeira](https://user-images.githubusercontent.com/22267601/165809447-cf3b6089-7b30-4a28-b024-553f3a6b01fe.jpg)
+ <p align="center">
+   <img src="https://user-images.githubusercontent.com/22267601/165809447-cf3b6089-7b30-4a28-b024-553f3a6b01fe.jpg" width=70% height=70% >
+</p>
+ 
  
  Aparecerá a janela do SDK Manager, onde você pode selecionar os pacotes de plataformas que você quer baixar.
  
